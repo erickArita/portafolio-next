@@ -10,16 +10,17 @@ const Header = () => {
     <>
       <header id='header' style={{ height: `${use100vh()}px` }}>
         <div className="circle--fly left" />
-
-        <Circle  radius={{ maxRadius: 32,minRadius:22}}>
-          <Image
-            className='main__image'
-            src='/me.png'
-            width={700}
-            height={700}
-            alt="Foto de Erick Arita"
-          />
-        </Circle>
+        <div style={{ marginBottom: '5rem' }}>
+          <Circle radius={{ maxRadius: 32, minRadius: 22 }} >
+            <Image
+              className='main__image'
+              src='/me.png'
+              width={700}
+              height={700}
+              alt="Foto de Erick Arita"
+            />
+          </Circle>
+        </div>
 
         <div className="circle--fly right" />
         <div className="text">
@@ -55,7 +56,7 @@ const Header = () => {
           overflow-y: hidden;
           z-index: 1;
         }
-    
+        
 
         .text {
           position: absolute;

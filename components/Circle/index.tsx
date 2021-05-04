@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 
 
 interface CircleProps {
@@ -17,19 +17,22 @@ const Circle: FC<CircleProps> = ({
 
   // creando una posiscion random para los circulos, si se necesita
   function randPosition() {
-    return Math.ceil(Math.random() * 100);
+    return `${Math.ceil(Math.random() * 100)}%`;
   }
   // con la cantidad de circulos que nos piden creamos un arra para recorrerlo
-  let circles = Array(circlesNum).fill('')
+  let circles: any[] =[]
+  useEffect(() => {
+    circles =  Array(circlesNum).fill({ top: randPosition(), right: randPosition() })
+  }, [])
   return (
     <>
       {
-        circles.map((_e, i) =>
+        circles.map((e, i) =>
           <div key={i} className={`circle circle--radius ${leviting && 'leviting'}`}
             style={randomPos ? {
               position: 'absolute',
-              top: `${randPosition()}%`,
-              right: `${randPosition()}%`,
+              top: e.top,
+              right: e.right,
               // @ts-ignore
               "--delay": `${i}`
             } : {}}

@@ -43,7 +43,7 @@ const Skills = () => {
         <div className="cards">
           {
             skills.map((skill =>
-              <Card key={skill.text}  content={{ ...skill }} />
+              <Card key={skill.text} content={{ ...skill }} />
             ))
           }
         </div>
@@ -51,7 +51,12 @@ const Skills = () => {
         <h2 style={{ justifySelf: 'flex-end' }}>
           <span>{"</"} </span> Skills <span>{'>'}</span>
         </h2>
-        <Circle leviting circlesNum={6} radius={{ maxRadius: 6,minRadius:6 }} randomPos />
+        <Circle 
+        leviting
+          circlesNum={6}
+          radius={{ maxRadius: 6, minRadius: 6 }}
+          randomPos
+        />
       </section>
       <style jsx>{`
       section {

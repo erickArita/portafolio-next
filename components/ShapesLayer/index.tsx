@@ -47,11 +47,11 @@ const ShapesLayer = () => {
           animation: onLoad 6s ;
         }
            
-          .shapesMask div{
-            transition: .7s cubic-bezier(0.165, 0.84, 0.44, 1);
-          }
+        .shapesMask div{
+          transition: .7s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
          
-        .shapesMask div:first-child {
+         .shapesMask div:first-child {
           align-self: flex-end;
 
         }
@@ -67,7 +67,7 @@ const ShapesLayer = () => {
         }
         .shapesMask div:last-child {
           align-self: flex-end;
-        }
+        }  
         @media (max-width:768px){
            
           .shapesMask div{
