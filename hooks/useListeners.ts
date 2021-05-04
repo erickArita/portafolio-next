@@ -1,10 +1,15 @@
 import { useEffect } from "react"
+interface UseListener {
+  event: string;
+  handler: (e: any) => void;
+}
+export const useWindowListener = ({  event, handler }: UseListener) => {
 
-export const useWindowListener = (event: keyof WindowEventMap, handler: (e: any) => void) => {
   useEffect(() => {
     window.addEventListener(event, handler)
     return () => window.removeEventListener(event, handler)
   }, [])
+
 }
 
 

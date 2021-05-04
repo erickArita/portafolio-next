@@ -9,7 +9,7 @@ const Navbar = () => {
   const handleShowMenu = () => {
     setShowMenu(false)
   }
-  useWindowListener('resize', handleShowMenu)
+  useWindowListener({ event: 'resize', handler: handleShowMenu })
   return (
     <>
       <nav>
@@ -53,12 +53,12 @@ const Navbar = () => {
           font-size: larger;
         }
         
-        @media (min-width: 769px) {
+        @media (min-width: 820px) {
           #hamburger {
             display: none;
           }
         }
-        @media (max-width: 768px) {
+        @media (max-width: 820px) {
           #closeMenuLayer {
             position: fixed;
             left: 0;

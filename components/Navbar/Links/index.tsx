@@ -57,7 +57,7 @@ const Links = ({ showMenu }: { showMenu: boolean }) => {
       .link:last-child {
         background-color: var(--terciary);
       }
-      @media (max-width: 768px) {
+      @media (max-width: 820px) {
         .links {
           display: flex;
           flex-direction: column;
