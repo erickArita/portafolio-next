@@ -2,6 +2,8 @@ import { FaJs, FaNode, FaHtml5, FaCss3, FaReact } from "react-icons/fa";
 import { DiFirebase } from "react-icons/di";
 import Card from "../Cards";
 import Circle from "../Circle";
+import { FC, useState } from "react";
+import { useObserver } from "../../hooks/useObserver";
 const skills = [
   {
     Icon: FaJs,
@@ -35,7 +37,15 @@ const skills = [
   },
 ];
 
-const Skills = () => {
+const Skills: FC = () => {
+  const [inview, setInview] = useState<boolean>(false)
+
+  const handleInView = (entries: IntersectionObserverEntry) => {
+
+    setInview(entries.isIntersecting)
+  }
+
+  useObserver({ cb: handleInView, options: { threshold: .6 }, target: '#skills' })
   return (
     <>
       <section id="skills">
@@ -47,15 +57,15 @@ const Skills = () => {
             ))
           }
         </div>
-
         <h2 style={{ justifySelf: 'flex-end' }}>
           <span>{"</"} </span> Skills <span>{'>'}</span>
         </h2>
-        <Circle 
-        leviting
+         <Circle
+          leviting
           circlesNum={6}
           radius={{ maxRadius: 6, minRadius: 6 }}
           randomPos
+          inView={inview}
         />
       </section>
       <style jsx>{`
@@ -70,7 +80,7 @@ const Skills = () => {
         align-items: center;
         overflow-x: hidden;
         overflow-y: hidden;
-        padding: 3rem;
+        padding: 0 3rem;
       }
       h2 {
         color: var(--grey);

@@ -1,34 +1,40 @@
-import { FC, useEffect } from "react";
-
+import { FC, useEffect, useState } from "react";
+import { createRandomPos } from "../../utils/random";
 
 interface CircleProps {
   circlesNum?: number;
   radius?: { maxRadius: number; minRadius?: number };
   randomPos?: boolean;
-  leviting?: boolean
+  leviting?: boolean,
+  inView?: boolean;
 }
+
 const Circle: FC<CircleProps> = ({
   circlesNum = 1,
   radius,
   randomPos,
   children,
-  leviting = false
+  leviting = false,
+  inView = false
 }) => {
+  const [coords, setCoords] = useState([{ top: '50%', left: '50%' }])
 
-  // creando una posiscion random para los circulos, si se necesita
-  function randPosition() {
-    return `${Math.ceil(Math.random() * 100)}%`;
-  }
+  // creando una posiscion random para los circulos 
+  useEffect(() => {
+    inView && randomPos && setCoords([...createRandomPos(circlesNum)])
+  }, [inView])
+
+
   return (
     <>
       {
         // con la cantidad de circulos que nos piden creamos un arra para recorrerlo
-        Array(circlesNum).fill('').map((e, i) =>
+        coords?.map((e, i) =>
           <div key={i} className={`circle circle--radius ${leviting && 'leviting'}`}
             style={randomPos ? {
               position: 'absolute',
-              top: `${randPosition()}`,
-              right: `${randPosition()}`,
+              top: inView ? e.top : '40%',
+              right: inView ? e.left : '45%',
               // @ts-ignore
               "--delay": `${i}`
             } : {}}
@@ -41,15 +47,23 @@ const Circle: FC<CircleProps> = ({
 
       <style jsx>{`
         .circle {
+          width: 30rem;
+          height: 30rem;
+          background: radial-gradient(
+              ellipse at left,
+              hsla(193, 51%, 54%, 0.2),
+              transparent
+            ),
+            radial-gradient(ellipse at right, rgba(160, 28, 201, 0.2), transparent);
           position: relative;
           transition: 0.5s;
-          z-index: 1;
+          z-index: 0;
           clip-path: circle(50%);
-          position: relative;
           display: flex;
           justify-content: center;
           align-items: center;
-
+          align-self: center;
+          justify-self: center;
         }
         .circle:hover {
           transition: 0.5s;
@@ -88,7 +102,6 @@ const Circle: FC<CircleProps> = ({
             width:  ${radius?.minRadius ? radius.minRadius : 20}rem;
             height:  ${radius?.minRadius ? radius.minRadius : 20}rem;
           }
-
         }
     `}</style>
     </>
