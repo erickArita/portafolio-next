@@ -19,20 +19,16 @@ const Circle: FC<CircleProps> = ({
   function randPosition() {
     return `${Math.ceil(Math.random() * 100)}%`;
   }
-  // con la cantidad de circulos que nos piden creamos un arra para recorrerlo
-  let circles: any[] =[]
-  useEffect(() => {
-    circles =  Array(circlesNum).fill({ top: randPosition(), right: randPosition() })
-  }, [])
   return (
     <>
       {
-        circles.map((e, i) =>
+        // con la cantidad de circulos que nos piden creamos un arra para recorrerlo
+        Array(circlesNum).fill('').map((e, i) =>
           <div key={i} className={`circle circle--radius ${leviting && 'leviting'}`}
             style={randomPos ? {
               position: 'absolute',
-              top: e.top,
-              right: e.right,
+              top: `${randPosition()}`,
+              right: `${randPosition()}`,
               // @ts-ignore
               "--delay": `${i}`
             } : {}}
