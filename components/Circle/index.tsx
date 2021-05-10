@@ -17,6 +17,7 @@ const Circle: FC<CircleProps> = ({
   leviting = false,
   inView = false
 }) => {
+  
   const [coords, setCoords] = useState([{ top: '50%', left: '50%' }])
 
   // creando una posiscion random para los circulos 

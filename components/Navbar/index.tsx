@@ -9,6 +9,7 @@ const Navbar = () => {
   const handleShowMenu = () => {
     setShowMenu(false)
   }
+  // para cerrar el menu al expandir o reducir la pantalla
   useWindowListener({ event: 'resize', handler: handleShowMenu })
   return (
     <>
