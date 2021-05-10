@@ -40,7 +40,7 @@ const Proyectos = () => {
         </div>
         <Cards
           skills={ProyectosCards}
-          layaut={{ height: 110, width: 350 }}
+          layaut={{ height: 110, width: 340 }}
         />
 
         <h2 >

@@ -1,21 +1,38 @@
+import { Dispatch, SetStateAction } from "react"
 import useScroll from "../../../hooks/useScroll"
 
-const Links = ({ showMenu }: { showMenu: boolean }) => {
+const Links = ({ showMenu, setShowMenu }: { showMenu: boolean, setShowMenu: Dispatch<SetStateAction<boolean>> }) => {
+  const closeMenuToNavigate = (section: string) => {
+    useScroll(section)
+    setShowMenu(false)
+  }
   return (
     <>
       <ul
         className={`links ${showMenu ? 'links--show' : ''} `}
       >
-        <li onClick={()=>useScroll('#header')} className="link">
+        <li
+          onClick={() => closeMenuToNavigate('#header')}
+          className="link"
+        >
           <p>Inicio</p>
         </li>
-        <li  onClick={()=>useScroll('#skills')}className="link">
+        <li
+          onClick={() => closeMenuToNavigate('#skills')}
+          className="link"
+        >
           <p >Skills</p>
         </li>
-        <li onClick={()=>useScroll('#proyectos')} className="link">
+        <li
+          onClick={() => closeMenuToNavigate('#proyectos')}
+          className="link"
+        >
           <p >Proyectos</p>
         </li>
-        <li onClick={()=>useScroll('#contacto')} className="link">
+        <li
+          onClick={() => closeMenuToNavigate('#contacto')}
+          className="link"
+        >
           <p>Contacto</p>
         </li>
       </ul>

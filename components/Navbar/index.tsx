@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <>
       <nav>
-        <Links showMenu={showMenu} />
+        <Links showMenu={showMenu} setShowMenu={setShowMenu} />
         <div id="hamburger" onClick={() => setShowMenu(!showMenu)}>
           <FaBars />
         </div>
