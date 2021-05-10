@@ -17,7 +17,7 @@ const Circle: FC<CircleProps> = ({
   leviting = false,
   inView = false
 }) => {
-  
+
   const [coords, setCoords] = useState([{ top: '50%', left: '50%' }])
 
   // creando una posiscion random para los circulos 
@@ -72,8 +72,8 @@ const Circle: FC<CircleProps> = ({
           position: absolute;
         }
         .circle--radius{
-          width: ${radius?.maxRadius}rem;
-          height: ${radius?.maxRadius}rem;
+          width: ${radius?.maxRadius ? radius?.maxRadius : '30rem'}rem;
+          height: ${radius?.maxRadius ? radius?.maxRadius : '30rem'}rem;
         }
      
         .circle .circle{
