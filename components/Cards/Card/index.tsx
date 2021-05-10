@@ -17,14 +17,14 @@ const Card = ({ skill, layaut }: { skill: CardContent, layaut: Layout | undefine
         onMouseLeave={() => setOnHover(false)}
       >
 
-        <div className={`card__icon ${onHover && 'desactive'}`}>
+        <div className={`card__icon ${onHover && skill.code && 'desactive'}`}>
           {skill.Icon}
         </div>
-        <div className={`card__text ${onHover && 'desactive'}`}>
+        <div className={`card__text ${onHover && skill.code &&  'desactive'}`}>
           {skill.text}
         </div>
 
-        {skill.code?.length != 0 && <div
+        {skill.code && <div
           className={`card__description ${onHover && 'card__active'}`}
         >
           <a href={skill.code} target='__blank'>Código</a>
