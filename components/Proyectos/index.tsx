@@ -31,7 +31,7 @@ const ProyectosCards = [
 const Proyectos = () => {
   return (
     <>
-      <section className='proyectos'>
+      <section id='proyectos' className='proyectos' >
         <h2><span> &lt; </span> Proyectos <span> &gt; </span></h2>
         <div
           style={{ position: 'absolute', top:'50%',marginTop:'-15rem' }}

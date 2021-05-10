@@ -1,19 +1,21 @@
+import useScroll from "../../../hooks/useScroll"
+
 const Links = ({ showMenu }: { showMenu: boolean }) => {
   return (
     <>
       <ul
         className={`links ${showMenu ? 'links--show' : ''} `}
       >
-        <li className="link">
+        <li onClick={()=>useScroll('#header')} className="link">
           <p>Inicio</p>
         </li>
-        <li className="link">
+        <li  onClick={()=>useScroll('#skills')}className="link">
           <p >Skills</p>
         </li>
-        <li className="link">
+        <li onClick={()=>useScroll('#proyectos')} className="link">
           <p >Proyectos</p>
         </li>
-        <li className="link">
+        <li onClick={()=>useScroll('#contacto')} className="link">
           <p>Contacto</p>
         </li>
       </ul>

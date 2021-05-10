@@ -11,7 +11,7 @@ const Header = () => {
       <header id='header' style={{ height: `${use100vh()}px` }}>
         <div className="circle--fly left" />
         <div className='circle--center'  >
-          <Circle radius={{ maxRadius: 32, minRadius: 22 }} >
+          <Circle radius={{ maxRadius: 32, minRadius: 22 }} leviting >
             <Image
               className='main__image'
               src='/me.png'
