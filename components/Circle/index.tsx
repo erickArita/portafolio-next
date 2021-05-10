@@ -72,8 +72,8 @@ const Circle: FC<CircleProps> = ({
           position: absolute;
         }
         .circle--radius{
-          width: ${radius?.maxRadius ? radius?.maxRadius : '30rem'}rem;
-          height: ${radius?.maxRadius ? radius?.maxRadius : '30rem'}rem;
+          width: ${radius?.maxRadius ? radius.maxRadius : '30rem'}rem;
+          height: ${radius?.maxRadius ? radius.maxRadius : '30rem'}rem;
         }
      
         .circle .circle{
