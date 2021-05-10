@@ -54,7 +54,7 @@ const Contact = () => {
   return (
     <>
       <section id='contacto' className="contacto ">
-      <h2><span> &lt; </span> Skills <span> &gt; </span></h2>
+      <h2><span> &lt; </span> Contacto <span> &gt; </span></h2>
         <form className='mt' onSubmit={handleSubmit} >
           <label htmlFor="nombre">Nombre</label>
           <input autoComplete='off' type="text" required name='nombre' />
@@ -69,7 +69,7 @@ const Contact = () => {
           <p className={`alert ${error ? 'error' : 'ok'}`}>{text}</p>
         </form>
         <h2>
-          <span>&lt;/ </span> Skills <span>&gt;</span>
+          <span>&lt;/ </span> Contacto <span>&gt;</span>
         </h2>
       </section>
       <style jsx>{`
