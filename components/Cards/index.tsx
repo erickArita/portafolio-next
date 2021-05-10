@@ -30,7 +30,7 @@ const Cards = ({ skills, layaut }: { skills: CardContent[], layaut?: Layout }) =
         .cards {
           align-self: center;
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(${layaut?.width || '310'}px, 1fr));
+          grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
           grid-gap: 3rem;
           width: 90%;
         }
