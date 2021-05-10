@@ -39,7 +39,7 @@ const Card = ({ skill, layaut }: { skill: CardContent, layaut: Layout | undefine
           background-color: rgba(255, 255, 255, 0.1);
           padding: 0.5rem;
           border-radius: 10px;
-          backdrop-filter: blur(5px);
+          --webkit-backdrop-filter: blur(5px);
           border-top: 1px solid rgba(255, 255, 255, 0.5);
           border-left: 1px solid rgba(255, 255, 255, 0.5);
           display: flex;
