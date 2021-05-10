@@ -74,7 +74,7 @@ const Navbar = () => {
             text-align: center;
             width: 100%;
             -webkit-backdrop-filter: blur(5px);
-            backdrop-filter: blur(5px);
+         
             padding: 6rem 5rem 0 5rem;
             justify-content: center;
             box-sizing: border-box;

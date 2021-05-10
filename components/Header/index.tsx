@@ -11,7 +11,7 @@ const Header = () => {
       <header id='header' style={{ height: `${use100vh()}px` }}>
         <div className="circle--fly left" />
         <div className='circle--center'  >
-          <Circle radius={{ maxRadius: 32, minRadius: 22 }} leviting >
+          <Circle radius={{ maxRadius: 32, minRadius: 22 }}  >
             <Image
               className='main__image'
               src='/me.png'
@@ -42,7 +42,6 @@ const Header = () => {
           </a>
         </div>
         <ShapesLayer />
-        {/* <Shapes reverse={true} /> */}
       </header>
       <style jsx>{`
         header {
@@ -69,7 +68,6 @@ const Header = () => {
           padding: 1rem;
           border-radius: 20px;
           -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
           border-top: 1px solid rgba(255, 255, 255, 0.5);
           border-left: 1px solid rgba(255, 255, 255, 0.5);
           z-index: 1;
