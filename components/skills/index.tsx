@@ -1,37 +1,37 @@
 import { FaJs, FaNode, FaHtml5, FaCss3, FaReact } from "react-icons/fa";
 import { DiFirebase } from "react-icons/di";
-import Card from "../Cards";
+import Cards from "../Cards";
 import Circle from "../Circle";
 import { FC, useState } from "react";
 import { useObserver } from "../../hooks/useObserver";
 const skills = [
   {
-    Icon: FaJs,
+    Icon: <FaJs/>,
     text: "JavaScript",
     color: " #ffff00",
   },
   {
-    Icon: FaNode,
+    Icon: <FaNode/>,
     text: "NodeJs",
     color: " #00ff00",
   },
   {
-    Icon: FaHtml5,
+    Icon: <FaHtml5/>,
     text: "Html",
     color: " #ff5e00",
   },
   {
-    Icon: FaCss3,
+    Icon: <FaCss3/>,
     text: "Css",
     color: " #4672d1",
   },
   {
-    Icon: FaReact,
+    Icon: <FaReact/>,
     text: "ReactJs",
     color: "#61dafb",
   },
   {
-    Icon: DiFirebase,
+    Icon: <DiFirebase/>,
     text: "Firebase",
     color: "#ffca28",
   },
@@ -49,18 +49,13 @@ const Skills: FC = () => {
   return (
     <>
       <section id="skills">
-        <h2><span>{'<'} </span> Skills <span>{'>'}</span></h2>
-        <div className="cards">
-          {
-            skills.map((skill =>
-              <Card key={skill.text} content={{ ...skill }} />
-            ))
-          }
-        </div>
-        <h2 style={{ justifySelf: 'flex-end' }}>
-          <span>{"</"} </span> Skills <span>{'>'}</span>
+        <h2><span> &lt; </span> Skills <span> &gt; </span></h2>
+
+        <Cards skills={skills} />
+        <h2>
+          <span>&lt;/ </span> Skills <span>&gt;</span>
         </h2>
-         <Circle
+        <Circle
           leviting
           circlesNum={6}
           radius={{ maxRadius: 6, minRadius: 6 }}
@@ -70,7 +65,6 @@ const Skills: FC = () => {
       </section>
       <style jsx>{`
       section {
-        color: rgba(255, 255, 0, 0.9);
         min-height: 100vh;
         background-color: var(--background);
         display: flex;
@@ -91,13 +85,7 @@ const Skills: FC = () => {
       span {
         color: rgba(160, 28, 201, 0.9);
       }
-      .cards {
-        align-self: center;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-        grid-gap: 1rem;
-        width: 90%;
-      }
+     
         
       `}</style>
     </>

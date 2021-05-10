@@ -28,8 +28,7 @@ const Circle: FC<CircleProps> = ({
   return (
     <>
       {
-        // con la cantidad de circulos que nos piden creamos un arra para recorrerlo
-        coords?.map((e, i) =>
+        coords.map((e, i) =>
           <div key={i} className={`circle circle--radius ${leviting && 'leviting'}`}
             style={randomPos ? {
               position: 'absolute',
@@ -39,7 +38,7 @@ const Circle: FC<CircleProps> = ({
               "--delay": `${i}`
             } : {}}
           >
-            <div className="circle circle--radius" style={{ left: 0, top: 0, margin: 0 }} />
+            <div className='circle circle--radius' style={{ left: 0, top: 0, margin: 0 }} />
             {children}
           </div>
         )
