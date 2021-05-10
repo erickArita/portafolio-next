@@ -1,3 +1,4 @@
+import Contact from "../components/Contact";
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import Proyectos from "../components/Proyectos";
@@ -10,6 +11,7 @@ export default function Home() {
       <Header />
       <Skills />
       <Proyectos/>
+      <Contact/>
     </>
   )
 }
