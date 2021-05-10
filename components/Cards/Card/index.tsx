@@ -16,16 +16,14 @@ const Card = ({ skill, layaut }: { skill: CardContent, layaut: Layout | undefine
         onMouseMove={() => setOnHover(true)}
         onMouseLeave={() => setOnHover(false)}
       >
-        {
-          !onHover && <>
-            <div className="card__icon">
-              {skill.Icon}
-            </div>
-            <div className="card__text">
-              {skill.text}
-            </div>
-          </>
-        }
+
+        <div className={`card__icon ${onHover && 'desactive'}`}>
+          {skill.Icon}
+        </div>
+        <div className={`card__text ${onHover && 'desactive'}`}>
+          {skill.text}
+        </div>
+
         {skill.code?.length != 0 && <div
           className={`card__description ${onHover && 'card__active'}`}
         >
@@ -49,9 +47,7 @@ const Card = ({ skill, layaut }: { skill: CardContent, layaut: Layout | undefine
           justify-self: center;
           align-items: center;
           z-index: 1;
-          transition: 0.5s;
           position: relative;
-          transition: 1s;
         }
         
 
@@ -60,10 +56,14 @@ const Card = ({ skill, layaut }: { skill: CardContent, layaut: Layout | undefine
           justify-content: center;
           align-items: center;
           font-size:80px;
+          transition: 1s;
+          opacity: 1;
         }
         .card__text {
           font-size: 1.8em;
+          transition: 1s;
           font-weight: 600;
+            opacity: 1;
         }
         .card__description{
           position: absolute;
@@ -81,7 +81,6 @@ const Card = ({ skill, layaut }: { skill: CardContent, layaut: Layout | undefine
           top: 0rem;
           opacity: 1;
           color: var(--background);
-          
           display: flex;
           justify-content: space-evenly;
           align-items: center;
@@ -92,6 +91,9 @@ const Card = ({ skill, layaut }: { skill: CardContent, layaut: Layout | undefine
           color: white;
           font-size: x-large;
         }  
+        .desactive{
+          opacity: 0;
+        }
     `}</style>
     </>
   )
