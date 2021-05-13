@@ -2,14 +2,14 @@ import { useState } from "react"
 import { FaBars } from "react-icons/fa"
 import { useWindowListener } from "../../hooks/useListeners"
 import Links from "./Links"
-
+/**This is used in <Layaut/> than contain all the components*/
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState<boolean>(false)
-
+  /**close menu */
   const handleShowMenu = () => {
     setShowMenu(false)
   }
-  // para cerrar el menu al expandir o reducir la pantalla
+  // close menu modify  width
   useWindowListener({ event: 'resize', handler: handleShowMenu })
   return (
     <>

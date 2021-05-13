@@ -1,25 +1,23 @@
 import Card from './Card'
-export interface CardContent {
-  Icon: JSX.Element | string,
-  text: string,
-  color?: string,
-  code?:string;
-  web?:string;
-}
-export interface Layout {
-  height?: number | string;
-  width?: number | string;
-}
-const Cards = ({ skills, layaut }: { skills: CardContent[], layaut?: Layout }) => {
+import { CardContent, Layout } from './card.interfaces'
+
+
+/**
+ * Grid of cards will be use in skills and proyect component
+ * @param {content | CardContent[]} content Its object array object of type CardContent
+ * @param {layaut | Layout} layaut and heigth of card
+ * @returns Return cards grid 
+ */
+const Cards = ({ content, layaut }: { content: CardContent[], layaut?: Layout }) => {
 
   return (
     <>
       <div className="cards">
         {
-          skills.map((skill =>
+          content.map((skill =>
             <Card
               key={skill.text}
-              skill={skill}
+              cardContent={skill}
               layaut={layaut}
             />
           ))
@@ -33,6 +31,7 @@ const Cards = ({ skills, layaut }: { skills: CardContent[], layaut?: Layout }) =
           grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
           grid-gap: 3rem;
           width: 90%;
+         
         }
        
   `}</style>

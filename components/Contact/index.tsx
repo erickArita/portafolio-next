@@ -1,10 +1,17 @@
 import { FormEvent, useState, } from "react"
-const Contact = () => {
+import OpenCloseTags from "../Container"
 
+/**Contac Form makes a call to an api with the data of the form
+ *  return error if request is failure
+ *  */
+const Contact = () => {
+  /**Message if error or succesfull request */
   const [mesage, setMesage] = useState(['', false])
+  /**Disable submit buttom */
   const [validating, setValidating] = useState(false)
   const [text, error] = mesage
 
+  /**hide the message after 5 sec */
   const temporalMesage = (message: string, error: boolean = true) => {
     setMesage([message, error])
     let id
@@ -13,21 +20,13 @@ const Contact = () => {
       setMesage(['', error])
     }, 5000);
   }
-  const validForm = (form: FormData) => {
-    if (form.get('nombre') == '' || form.get('mensaje') == '' || form.get('correo') == '') {
-      return false
-    } else {
-      return true
-    }
-  }
+
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setValidating(true)
     // @ts-ignore
     const form = new FormData(e.currentTarget)
-    if (!validForm(form)) {
-      return temporalMesage('Llene todos los campos'), setValidating(false)
-    }
+
     // @ts-ignore
     sendData(form) && e.target.reset();
     setValidating(false)
@@ -54,34 +53,24 @@ const Contact = () => {
   return (
     <>
       <section id='contacto' className="contacto ">
-      <h2><span> &lt; </span> Contacto <span> &gt; </span></h2>
-        <form className='mt' onSubmit={handleSubmit} >
-          <label htmlFor="nombre">Nombre</label>
-          <input autoComplete='off' type="text" required name='nombre' />
+        <OpenCloseTags text='Contacto'>
+          <form className='mt' onSubmit={handleSubmit} >
+            <label htmlFor="nombre">Nombre</label>
+            <input autoComplete='off' type="text" required name='nombre' />
 
-          <label htmlFor="correo">Correo Electrónico</label>
-          <input autoComplete='off' name='correo' required type="email" />
+            <label htmlFor="correo">Correo Electrónico</label>
+            <input autoComplete='off' name='correo' required type="email" />
 
-          <label htmlFor="textArea">Mensaje</label>
-          <textarea name="mensaje" cols={30} rows={10} required ></textarea>
+            <label htmlFor="textArea">Mensaje</label>
+            <textarea name="mensaje" cols={30} rows={10} required ></textarea>
 
-          <button type='submit'  disabled={validating}>Enviar</button>
-          <p className={`alert ${error ? 'error' : 'ok'}`}>{text}</p>
-        </form>
-        <h2>
-          <span>&lt;/ </span> Contacto <span>&gt;</span>
-        </h2>
+            <button type='submit' disabled={validating}>Enviar</button>
+            <p className={`alert ${error ? 'error' : 'ok'}`}>{text}</p>
+          </form>
+        </OpenCloseTags>
       </section>
       <style jsx>{`
-        .contacto{
-          background-color: var(--background);
-          display: flex;
-          align-items: center;
-          flex-direction: column;
-          justify-content: center;
-          padding: 0 3rem;
-          min-height: 100vh;
-        }          
+              
         form  {
           max-width: 450px;
           display: flex;
@@ -95,16 +84,7 @@ const Contact = () => {
           position: relative;
           
         }
-        h2 {
-          color: var(--grey);
-          font-size: 30px;
-          margin-left: 4%;
-          align-self: flex-start;
-        }
-        span {
-          color: rgba(160, 28, 201, 0.9);
-        }
-      
+   
         input{
           height: .7rem;
           border-radius: 5px;

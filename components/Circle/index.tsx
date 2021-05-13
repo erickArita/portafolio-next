@@ -1,26 +1,36 @@
-import { FC, useEffect, useState } from "react";
+import { FC, ReactNode, useEffect, useState } from "react";
 import { createRandomPos } from "../../utils/random";
 
 interface CircleProps {
+  /**Number of circles  */
   circlesNum?: number;
+  /**Default redius is 6rem */
   radius?: { maxRadius: number; minRadius?: number };
+  /**If true, the circles position is absolute and shown in rendom position  */
   randomPos?: boolean;
+  /**Leviting animation */
   leviting?: boolean,
+  /**this property must be provided from an useIntersectionObserver */
   inView?: boolean;
-}
 
-const Circle: FC<CircleProps> = ({
+  children?: ReactNode
+}
+/**Generate circles is used in header, skill and proyects 
+ * @interface {@link CircleProps}
+ * @param {CircleProps} Object receives CircleProps 
+ */
+const Circle:FC<CircleProps> = ({
   circlesNum = 1,
   radius,
   randomPos,
   children,
   leviting = false,
   inView = false
-}) => {
+}: CircleProps) => {
 
   const [coords, setCoords] = useState([{ top: '50%', left: '50%' }])
 
-  // creando una posiscion random para los circulos 
+  /**creando una posiscion random para los circulos*/
   useEffect(() => {
     inView && randomPos && setCoords([...createRandomPos(circlesNum)])
   }, [inView])

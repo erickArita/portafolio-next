@@ -1,9 +1,11 @@
+// use100vh for ios devices 
 import { use100vh } from "react-div-100vh";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { IoMdHand } from 'react-icons/io'
 import Image from 'next/image'
 import ShapesLayer from '../ShapesLayer'
 import Circle from "../Circle";
+
 const Header = () => {
 
   return (

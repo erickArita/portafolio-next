@@ -5,7 +5,11 @@ interface UseObserver {
   options: IntersectionObserverInit,
   cb: (e: IntersectionObserverEntry) => void
 }
-
+/**hook that observe DOM elements and notify where observe element is inview
+ * @param cb callback where receives intersection observe entries
+ * @param options IntersectionObserver options
+ * @param target Element to observe
+ */
 export const useObserver = ({ cb, options, target }: UseObserver) => {
   const observer = useRef<IntersectionObserver>()
   

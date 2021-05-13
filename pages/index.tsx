@@ -1,3 +1,4 @@
+import AboutMe from "../components/About";
 import Contact from "../components/Contact";
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
@@ -9,6 +10,7 @@ export default function Home() {
     <>
       <Navbar />
       <Header />
+      <AboutMe/>
       <Skills />
       <Proyectos/>
       <Contact/>

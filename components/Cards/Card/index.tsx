@@ -1,15 +1,23 @@
 import { useState } from 'react'
-import { CardContent, Layout } from '../index'
-const Card = ({ skill, layaut }: { skill: CardContent, layaut: Layout | undefined }) => {
+import { CardContent, Layout } from '../card.interfaces'
+
+/**
+ * Card que se usa en la cardGrid
+ * @param {Object } data
+ * @param cardContent its implementation of  CardContent interface
+ * @returns Element 
+ */
+const Card = ({ cardContent, layaut }: { cardContent: CardContent, layaut: Layout | undefined }) => {
+
   const [onHover, setOnHover] = useState(false)
+
   return (
     <>
       <div
-
         className="card"
         style={{
           transition: '1s ease-in',
-          color: skill.color,
+          color: cardContent.colorIcon,
           width: layaut?.width,
           height: layaut?.height
         }}
@@ -17,18 +25,18 @@ const Card = ({ skill, layaut }: { skill: CardContent, layaut: Layout | undefine
         onMouseLeave={() => setOnHover(false)}
       >
 
-        <div className={`card__icon ${onHover && skill.code && 'desactive'}`}>
-          {skill.Icon}
+        <div className={`card__icon ${onHover && cardContent.code && 'desactive'}`}>
+          {cardContent.Icon}
         </div>
-        <div className={`card__text ${onHover && skill.code &&  'desactive'}`}>
-          {skill.text}
+        <div className={`card__text ${onHover && cardContent.code && 'desactive'}`}>
+          {cardContent.text}
         </div>
 
-        {skill.code && <div
+        {cardContent.code && <div
           className={`card__description ${onHover && 'card__active'}`}
         >
-          <a href={skill.code} target='__blank'>Código</a>
-          <a href={skill.web} target='__blank'>Web</a>
+          <a href={cardContent.code} target='__blank'>Código</a>
+          <a href={cardContent.web} target='__blank'>Web</a>
         </div>}
       </div>
       <style jsx>{`

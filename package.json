@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start "
+    "start": "next start ",
+    "docs":"npx typedoc --out docs ./components ./hooks ./utils --exclude ./node_modules "
   },
   "dependencies": {
     "animated-scroll-to": "^2.2.0",
@@ -14,7 +15,8 @@
     "react": "17.0.2",
     "react-div-100vh": "^0.6.0",
     "react-dom": "17.0.2",
-    "react-icons": "^4.2.0"
+    "react-icons": "^4.2.0",
+    "typedoc": "^0.20.36"
   },
   "devDependencies": {
     "@types/react": "^17.0.4",
