@@ -1,10 +1,20 @@
-Este es mi portafolio construido con nextjs y typescript
-## para Comenzar
+# Portafolio  
 
-Clona el repo:
+Este es mi portafolio construido con nextjs,  typescript y styled-css.
+
+
+La documentacion se encuentra en la carpeta docs.
+
+## Para Comenzar
+
+- Clona el repo
+```bash
+git clone https://github.com/erickArita/portafolio-next
+```
+- Instala las dependencias e inicialo en modo de desarrollo.
 
 ```bash
-cd portafolio-next
+cd portafolio-next 
 npm i
 npm run dev
 ```
