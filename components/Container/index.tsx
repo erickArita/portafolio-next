@@ -1,10 +1,10 @@
 /**The open and close tag in each section 
  * @example <skill>content </skills>
  *  */
-const OpenCloseTags = ({ text, children }: { text: string, children: any }) => {
+const OpenCloseTags = ({ text, children, id }: { text: string, children: any, id: string }) => {
   return (
     <>
-      <section>
+      <section id={id}>
         <h2><span> &lt; </span> {text} <span> &gt; </span></h2>
         {children}
         <h2 ><span> &lt;/ </span> {text} <span> &gt; </span></h2>

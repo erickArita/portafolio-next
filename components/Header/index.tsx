@@ -4,7 +4,7 @@ import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { IoMdHand } from 'react-icons/io'
 import Image from 'next/image'
 import ShapesLayer from '../ShapesLayer'
-import Circle from "../Circle";
+import Shape from "../Shape";
 
 const Header = () => {
 
@@ -13,7 +13,7 @@ const Header = () => {
       <header id='header' style={{ height: `${use100vh()}px` }}>
         <div className="circle--fly left" />
         <div className='circle--center'  >
-          <Circle radius={{ maxRadius: 32, minRadius: 22 }}  >
+          <Shape radius={{ maxRadius: 32, minRadius: 22 }}  >
             <Image
               className='main__image'
               src='/me.png'
@@ -21,7 +21,7 @@ const Header = () => {
               height={700}
               alt="Foto de Erick Arita"
             />
-          </Circle>
+          </Shape>
         </div>
 
         <div className="circle--fly right" />

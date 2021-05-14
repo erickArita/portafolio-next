@@ -1,5 +1,5 @@
 import { FormEvent, useState, } from "react"
-import OpenCloseTags from "../Container"
+import Container from "../Container"
 
 /**Contac Form makes a call to an api with the data of the form
  *  return error if request is failure
@@ -52,8 +52,7 @@ const Contact = () => {
 
   return (
     <>
-      <section id='contacto' className="contacto ">
-        <OpenCloseTags text='Contacto'>
+        <Container text='Contacto' id='contacto'>
           <form className='mt' onSubmit={handleSubmit} >
             <label htmlFor="nombre">Nombre</label>
             <input autoComplete='off' type="text" required name='nombre' />
@@ -67,8 +66,7 @@ const Contact = () => {
             <button type='submit' disabled={validating}>Enviar</button>
             <p className={`alert ${error ? 'error' : 'ok'}`}>{text}</p>
           </form>
-        </OpenCloseTags>
-      </section>
+        </Container>
       <style jsx>{`
               
         form  {
@@ -124,7 +122,7 @@ const Contact = () => {
           text-align: center;
         }
         .ok{
-          color: green;
+          color: var(--grey);
         }
         .error{
           color: darkred;

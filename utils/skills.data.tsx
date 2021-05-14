@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { DiFirebase } from "react-icons/di";
 import { FaCss3, FaHtml5, FaJs, FaNode, FaReact } from "react-icons/fa";
 /**Data for <skill/> component show in main page  */
@@ -31,5 +32,10 @@ export const skills = [
     Icon: <DiFirebase />,
     text: "Firebase",
     colorIcon: "#ffca28",
+  },
+  {
+    Icon: <Image src='/nextjs.svg' height={100} width={100} objectFit='contain' />,
+    text: "NextJs",
+    colorIcon: "#141414",
   },
 ];
