@@ -75,7 +75,7 @@ const Card = ({ cardContent, layaut }: { cardContent: CardContent, layaut: Layou
         .card__description{
           position: absolute;
           box-sizing: border-box;
-          transition: .8s cubic-bezier(0.165, 0.84, 0.44, 1);
+          transition: .5s cubic-bezier(0.165, 0.84, 0.44, 1);
           opacity: 0;
           border-radius: 10px;
           display: flex;
@@ -83,20 +83,19 @@ const Card = ({ cardContent, layaut }: { cardContent: CardContent, layaut: Layou
           height: 100%;
           width: 100%;
           padding: 1.3rem;
+          justify-content: space-evenly;
+          align-items: center;
         }
+        .card__description a{
+          text-decoration: none;
+          color: white;
+          font-size: x-large;
+        }  
         .card__active{
           top: 0rem;
           opacity: 1;
           color: var(--background);
-          display: flex;
-          justify-content: space-evenly;
-          align-items: center;
           transition: .8s ease;
-        }  
-        .card__active a{
-          text-decoration: none;
-          color: white;
-          font-size: x-large;
         }  
         .desactive{
           opacity: 0;

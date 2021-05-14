@@ -7,10 +7,9 @@ const Links = ({ showMenu, setShowMenu }: { showMenu: boolean, setShowMenu: Disp
    * onClin in Link close menu and scroll
    *@param section Elemento to scroll 
    */
-
   const closeMenuToNavigate = (section: string) => {
-    useScroll(section)
-    setShowMenu(false)
+    useScroll(section);
+    setShowMenu(false);
   }
 
   return (
@@ -34,7 +33,7 @@ const Links = ({ showMenu, setShowMenu }: { showMenu: boolean, setShowMenu: Disp
           onClick={() => closeMenuToNavigate('#skills')}
           className="link"
         >
-          <p >Skills</p>
+          <p>Skills</p>
         </li>
         <li
           onClick={() => closeMenuToNavigate('#proyectos')}

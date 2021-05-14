@@ -35,7 +35,6 @@ const Shape: FC<Shape> = ({
   reorderOnHover = false
 }: Shape) => {
   const [coords, setCoords] = useState([{ top: '50%', left: '50%' }])
-
   /**Reating a random position if section inview and randomPos param is true */
   useEffect(() => {
     inView || randomPos && setCoords([...createRandomPos(circlesNum)])
@@ -44,7 +43,10 @@ const Shape: FC<Shape> = ({
   const handleHover = () => {
     setCoords([...createRandomPos(circlesNum)])
   }
-  
+  /**Rearrange the shapes whe mouse is over */
+  const handleRearrange = () => {
+    reorderOnHover && handleHover()
+  }
   return (
     <>
       {
@@ -52,12 +54,13 @@ const Shape: FC<Shape> = ({
           <div key={i} className={` shape ${shape} size ${leviting && 'leviting'}`}
             style={randomPos ? {
               position: 'absolute',
-              top: inView  ? e.top : '20%',
-              right: inView  ? e.left : '35%',
+              top: inView ? e.top : '20%',
+              right: inView ? e.left : '35%',
               // @ts-ignore
               "--delay": `${i}`
             } : {}}
-            onMouseEnter={() => reorderOnHover && handleHover()}
+            onAnimationEnd={()=>console.log('kkk')}
+            onMouseMove={handleRearrange}
           >
             <div className={`shape ${shape} size`}
               style={{ left: 0, top: 0, margin: 0 }} />
