@@ -5,7 +5,7 @@ interface Shape {
   /**Number of circles  */
   circlesNum?: number;
   /**Default redius is 6rem */
-  radius?: { maxRadius: number; minRadius?: number };
+  radius?: { maxRadius?: number; minRadius?: number };
   /**If true, the circles position is absolute and shown in rendom position  */
   randomPos?: boolean;
   /**Leviting animation */
@@ -49,17 +49,17 @@ const Shape: FC<Shape> = ({
     <>
       {
         coords.map((e, i) =>
-          <div key={i} className={`${shape} size ${leviting && 'leviting'}`}
+          <div key={i} className={` shape ${shape} size ${leviting && 'leviting'}`}
             style={randomPos ? {
               position: 'absolute',
-              top: inView  ? e.top : '40%',
-              right: inView  ? e.left : '45%',
+              top: inView  ? e.top : '30%',
+              right: inView  ? e.left : '40%',
               // @ts-ignore
               "--delay": `${i}`
             } : {}}
-            onMouseEnter={() => reorderOnHover && handleHover()}
+            onMouseUp={() => reorderOnHover && handleHover()}
           >
-            <div className={`${shape} size`}
+            <div className={`shape ${shape} size`}
               style={{ left: 0, top: 0, margin: 0 }} />
             {children}
           </div>
@@ -67,7 +67,7 @@ const Shape: FC<Shape> = ({
       }
 
       <style jsx>{`
-        .circle,.triangle {
+        .shape {
           width: 30rem;
           height: 30rem;
           background: radial-gradient(
@@ -99,11 +99,11 @@ const Shape: FC<Shape> = ({
           height: ${radius?.maxRadius ? radius.maxRadius : '30rem'}rem;
         }
      
-        .circle .circle{
+        .shape .circle{
           position: absolute;
         }
         .circle:hover{
-        transform: scale(0);
+          transform: scale(0);
         }
         .triangle .triangle{
           position: absolute;
@@ -125,7 +125,7 @@ const Shape: FC<Shape> = ({
           }
         }
         @media (max-width: 768px) {
-          .circle {
+          .shape {
             width:  ${radius?.minRadius ? radius.minRadius : 20}rem;
             height:  ${radius?.minRadius ? radius.minRadius : 20}rem;
           }

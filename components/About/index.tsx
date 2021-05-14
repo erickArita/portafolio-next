@@ -11,6 +11,7 @@ const AboutMe = () => {
         <Shape shape='triangle'
           circlesNum={6}
           randomPos
+          radius={{minRadius:15}}
           inView={inView}
           reorderOnHover
         />
@@ -28,9 +29,9 @@ const AboutMe = () => {
         color: var(--white);
         font-size: 20px;
         text-align: left;
-        width: 500px;
         line-height: 1.6rem;
         z-index: 2;
+        margin:0 1rem;
       }
       .about__me__highlight{
         color: var(--terciary);

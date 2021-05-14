@@ -8,8 +8,10 @@ import Container from "../Container";
 /**Component that show skills in card grid */
 const Skills: FC = () => {
 
-  /** handleInView receives data of intersection observer api*/
-  const inView  = useObserver({ options: { threshold: .6 }, target: '#skills' })
+  /** handleInView receives data of intersection observer api <Shape/> receives this value and 
+   * launch animation
+  */
+  const inView  = useObserver({ options: { threshold: .5 }, target: '#skills' })
 
   return (
     <>

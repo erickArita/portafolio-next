@@ -24,20 +24,20 @@ const Card = ({ cardContent, layaut }: { cardContent: CardContent, layaut: Layou
         onMouseMove={() => setOnHover(true)}
         onMouseLeave={() => setOnHover(false)}
       >
-
         <div className={`card__icon ${onHover && cardContent.code && 'desactive'}`}>
           {cardContent.Icon}
         </div>
         <div className={`card__text ${onHover && cardContent.code && 'desactive'}`}>
           {cardContent.text}
         </div>
-
-        {cardContent.code && <div
-          className={`card__description ${onHover && 'card__active'}`}
-        >
-          <a href={cardContent.code} target='__blank'>Código</a>
-          <a href={cardContent.web} target='__blank'>Web</a>
-        </div>}
+        {
+          cardContent.code &&
+          <div className={`card__description ${onHover && 'card__active'}`}
+          >
+            <a href={cardContent.code} target='__blank'>Código</a>
+            <a href={cardContent.web} target='__blank'>Web</a>
+          </div>
+        }
       </div>
       <style jsx>{`
         .card {
@@ -58,7 +58,6 @@ const Card = ({ cardContent, layaut }: { cardContent: CardContent, layaut: Layou
           position: relative;
         }
         
-
         .card__icon {
           display: flex;
           justify-content: center;
@@ -71,7 +70,7 @@ const Card = ({ cardContent, layaut }: { cardContent: CardContent, layaut: Layou
           font-size: 1.8em;
           transition: 1s;
           font-weight: 600;
-            opacity: 1;
+          opacity: 1;
         }
         .card__description{
           position: absolute;
