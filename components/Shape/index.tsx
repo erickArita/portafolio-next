@@ -52,12 +52,12 @@ const Shape: FC<Shape> = ({
           <div key={i} className={` shape ${shape} size ${leviting && 'leviting'}`}
             style={randomPos ? {
               position: 'absolute',
-              top: inView  ? e.top : '30%',
-              right: inView  ? e.left : '40%',
+              top: inView  ? e.top : '20%',
+              right: inView  ? e.left : '35%',
               // @ts-ignore
               "--delay": `${i}`
             } : {}}
-            onMouseUp={() => reorderOnHover && handleHover()}
+            onMouseEnter={() => reorderOnHover && handleHover()}
           >
             <div className={`shape ${shape} size`}
               style={{ left: 0, top: 0, margin: 0 }} />

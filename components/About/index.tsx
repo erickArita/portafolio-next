@@ -11,7 +11,7 @@ const AboutMe = () => {
         <Shape shape='triangle'
           circlesNum={6}
           randomPos
-          radius={{minRadius:15}}
+          radius={{ minRadius: 15 }}
           inView={inView}
           reorderOnHover
         />
@@ -19,7 +19,7 @@ const AboutMe = () => {
           Me apasiona el mundo tech y el software,
           lo veo como plastilina la puedes moldear como quieras
           y crear cosas increibles. <br />
-          Me desenvuelvo principalmente como 
+          Me desenvuelvo principalmente como
           <span className='about__me__highlight'> Frontend </span>
           developer aunque también me puedo desempeñar como<span className='about__me__highlight'> Backend</span>.
       </p>
@@ -31,10 +31,17 @@ const AboutMe = () => {
         text-align: left;
         line-height: 1.6rem;
         z-index: 2;
-        margin:0 1rem;
+        width: 500px;
+     
       }
       .about__me__highlight{
         color: var(--terciary);
+      }
+      @media (max-width:500px){
+        .about__me{
+          width: 300px;
+        }
+
       }
      `}</style>
     </>
