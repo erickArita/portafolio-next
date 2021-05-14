@@ -18,9 +18,9 @@ const AboutMe = () => {
           Me apasiona el mundo tech y el software,
           lo veo como plastilina la puedes moldear como quieras
           y crear cosas increibles. <br />
-          Me desenvuelvo principalmente como
-          <span className='about__me__highlight'>Frontend</span>
-          developer aunque también me puedo desempeñar como <span className='about__me__highlight'>Backend</span>.
+          Me desenvuelvo principalmente como 
+          <span className='about__me__highlight'> Frontend </span>
+          developer aunque también me puedo desempeñar como<span className='about__me__highlight'> Backend</span>.
       </p>
       </OpenCloseTags>
       <style jsx>{`
@@ -33,7 +33,7 @@ const AboutMe = () => {
         z-index: 2;
       }
       .about__me__highlight{
-        color: rgba(160, 28, 201, 0.9);
+        color: var(--terciary);
       }
      `}</style>
     </>
