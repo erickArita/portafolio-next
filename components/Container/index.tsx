@@ -31,6 +31,11 @@ const OpenCloseTags = ({ text, children, id }: { text: string, children: any, id
         span {
           color: rgba(160, 28, 201, 0.9);
         }
+        @media(max-width:400px){
+          section{
+            padding:1rem 0rem;
+          }
+        }
   `}</style>
     </>
   )

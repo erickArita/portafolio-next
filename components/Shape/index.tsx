@@ -54,7 +54,7 @@ const Shape: FC<Shape> = ({
           <div key={i} className={` shape ${shape} size ${leviting && 'leviting'}`}
             style={randomPos ? {
               position: 'absolute',
-              top: inView ? e.top : '20%',
+              top: inView ? e.top : '40%',
               right: inView ? e.left : '35%',
               // @ts-ignore
               "--delay": `${i}`

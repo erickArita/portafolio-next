@@ -8,6 +8,7 @@ const AboutMe = () => {
   return (
     <>
       <OpenCloseTags text='Sobre-mi' id='sobremi'>
+
         <Shape shape='triangle'
           circlesNum={6}
           randomPos
