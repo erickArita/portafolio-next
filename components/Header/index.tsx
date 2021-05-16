@@ -176,7 +176,7 @@ const Header = () => {
             left: 50%;
             width: 70px;
             height: 30px;
-            bottom: 2%;
+            bottom: 0%;
             margin-left: -30px;
           }
           .social a:last-child {
