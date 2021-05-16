@@ -16,7 +16,7 @@ const OpenCloseTags = ({ text, children, id }: { text: string, children: any, id
           display: flex;
           flex-direction: column;
           position: relative;
-          justify-content: space-around;
+          justify-content: space-between;
           align-items: center;
           overflow-x: hidden;
           overflow-y: hidden;
