@@ -77,11 +77,12 @@ const Shape: FC<Shape> = ({
           position: absolute;                 
         }
         .shapes__container--center{
-          height: 100vh;
+          height: 100%;
           position: absolute;
           display: flex;
           justify-content: center;
           align-items: center;
+          margin-bottom: 4rem;
         }
         .shape__basis {
           width: 30rem;
