@@ -35,6 +35,9 @@ const OpenCloseTags = ({ text, children, id }: { text: string, children: any, id
           section{
             padding:1rem 0rem;
           }
+        h2 {
+          font-size: 26px;
+        }
         }
   `}</style>
     </>
