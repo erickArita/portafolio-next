@@ -54,12 +54,12 @@ const Shape: FC<Shape> = ({
           <div key={i} className={` shape ${shape} size ${leviting && 'leviting'}`}
             style={randomPos ? {
               position: 'absolute',
-              top: inView ? e.top : '40%',
-              right: inView ? e.left : '35%',
+              top: inView ? e.top : '50%',
+              right: inView ? e.left : '50%',
+              margin:`-${radius} -${radius} 0 0`,
               // @ts-ignore
               "--delay": `${i}`
             } : {}}
-            onAnimationEnd={()=>console.log('kkk')}
             onMouseMove={handleRearrange}
           >
             <div className={`shape ${shape} size`}

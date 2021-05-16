@@ -15,7 +15,7 @@ const Navbar = () => {
     <>
       <nav>
         <Links showMenu={showMenu} setShowMenu={setShowMenu} />
-        <div id="hamburger" onClick={() => setShowMenu(!showMenu)}>
+        <div id="hamburger" onClickCapture={() => setShowMenu(!showMenu)}>
           <FaBars />
         </div>
         {showMenu && <div id="closeMenuLayer" onClick={() => setShowMenu(false)} />}
@@ -35,7 +35,6 @@ const Navbar = () => {
         }
 
         #hamburger {
-          display: unset;
           cursor: pointer;
           position: absolute;
           right: 0;
@@ -47,9 +46,8 @@ const Navbar = () => {
           height: 25px;
           color: var(--white);
           background-color: var(--secondary);
-          border-radius: 100%;
+          clip-path: circle(50%);
           padding: 0.5rem;
-          box-shadow: 0px 0px 9px var(--secondary);
           z-index: 2;
           font-size: larger;
         }

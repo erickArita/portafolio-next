@@ -69,7 +69,7 @@ const Header = () => {
           background-color: rgba(255, 255, 255, 0.2);
           padding: 1rem;
           border-radius: 20px;
-          -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
           border-top: 1px solid rgba(255, 255, 255, 0.5);
           border-left: 1px solid rgba(255, 255, 255, 0.5);
           z-index: 1;
