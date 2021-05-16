@@ -34,10 +34,11 @@ const Shape: FC<Shape> = ({
   shape = 'circle',
   reorderOnHover = false
 }: Shape) => {
-  const [coords, setCoords] = useState([{ top: '50%', left: '50%' }])
+
+  const [coords, setCoords] = useState([{ top: 50, left: 50 }])
   /**Reating a random position if section inview and randomPos param is true */
   useEffect(() => {
-    inView || randomPos && setCoords([...createRandomPos(circlesNum)])
+    setCoords([...createRandomPos(circlesNum)])
   }, [inView])
 
   const handleHover = () => {
@@ -49,27 +50,38 @@ const Shape: FC<Shape> = ({
   }
   return (
     <>
-      {
-        coords.map((e, i) =>
-          <div key={i} className={` shape ${shape} size ${leviting && 'leviting'}`}
-            style={randomPos ? {
-              position: 'absolute',
-              top: inView ? e.top : '50%',
-              right: inView ? e.left : '50%',
-              margin:`-${radius} -${radius} 0 0`,
-              // @ts-ignore
-              "--delay": `${i}`
-            } : {}}
-            onMouseMove={handleRearrange}
-          >
-            <div className={`shape ${shape} size`}
-              style={{ left: 0, top: 0, margin: 0 }} />
-            {children}
-          </div>
-        )
-      }
+      {/* if is one shape then center this else any position */}
+      <div className={`${circlesNum == 1 ? 'shapes__container--center' : 'shapes__container'}`}>
+        {
+          coords.map((e, i) =>
+            <div key={i} className={`shape ${shape} size ${leviting && 'leviting'}`}
+              style={randomPos ? {
+                transform: `translate(${e.top}vw,${e.left}vh)`,
+                // @ts-ignore
+                "--delay": `${i}`
+              } : {}}
+              onMouseMove={handleRearrange}
+            >
+              <div className={`shape ${shape} size`}
+                style={{ left: 0, top: 0, margin: 0 }} />
+              {children}
+            </div>
+          )
+        }
+      </div>
 
       <style jsx>{`
+        .shapes__container{
+          width:100vw;
+          height: 100vh;
+          position: absolute;                 
+        }
+        .shapes__container--center{
+          height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
         .shape {
           width: 30rem;
           height: 30rem;

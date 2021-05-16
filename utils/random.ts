@@ -1,5 +1,5 @@
 /**Create random position  */
-const randPosition = () => `${Math.ceil(Math.random() * 90)}%`;
+const randPosition = () =>   Math.random() * 60 ;
 
 /**This function create random pos to x and y coord is used in <Circle/> component
  * @returns {Array<{top:string,left:string}>} Array wit two coords

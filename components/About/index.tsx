@@ -1,5 +1,5 @@
 import { useObserver } from "../../hooks/useObserver"
-import OpenCloseTags from "../Container"
+import Container from "../Container"
 import Shape from "../Shape"
 
 /**Seccion of About Me this component is text only */
@@ -7,7 +7,7 @@ const AboutMe = () => {
   const inView = useObserver({ target: '#sobremi' })
   return (
     <>
-      <OpenCloseTags text='Sobre-mi' id='sobremi'>
+      <Container text='Sobre-mi' id='sobremi'>
 
         <Shape shape='triangle'
           circlesNum={6}
@@ -24,7 +24,7 @@ const AboutMe = () => {
           <span className='about__me__highlight'> Frontend </span>
           developer aunque también me puedo desempeñar como<span className='about__me__highlight'> Backend</span>.
       </p>
-      </OpenCloseTags>
+      </Container>
       <style jsx>{`
       .about__me{
         color: var(--white);

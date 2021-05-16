@@ -11,14 +11,13 @@ const Skills: FC = () => {
   /** handleInView receives data of intersection observer api <Shape/> receives this value and 
    * launch animation
   */
-  const inView  = useObserver({ options: { threshold: .5 }, target: '#skills' })
+  const inView = useObserver({ options: { threshold: .5 }, target: '#skills' })
 
   return (
     <>
       <Container text='Skills' id='skills'>
         <Cards content={skills} />
         <Shape
-          leviting
           circlesNum={6}
           radius={{ maxRadius: 6, minRadius: 6 }}
           randomPos
