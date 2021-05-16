@@ -12,8 +12,7 @@ const Header = () => {
     <>
       <header id='header' style={{ height: `${use100vh()}px` }}>
         <div className="circle--fly left" />
-        <div className='circle--center'  >
-          <Shape radius={{ maxRadius: 32, minRadius: 22 }}  >
+          <Shape radius={{ maxRadius: 32, minRadius: 22 }}   >
             <Image
               className='main__image'
               src='/me.png'
@@ -22,7 +21,6 @@ const Header = () => {
               alt="Foto de Erick Arita"
             />
           </Shape>
-        </div>
 
         <div className="circle--fly right" />
         <div className="text">
@@ -163,14 +161,7 @@ const Header = () => {
             );
             right: -40%;
           }
-          .circle--center{
-            margin-bottom: 5rem;
-            height: 100%;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          }
+          
           .text {
             top: 70%;
             left: 50%;
