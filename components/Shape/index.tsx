@@ -112,8 +112,8 @@ const Shape: FC<Shape> = ({
         }
         
         .size{
-          width: ${radius?.maxRadius ? radius.maxRadius : '30rem'}rem;
-          height: ${radius?.maxRadius ? radius.maxRadius : '30rem'}rem;
+          width: ${radius?.maxRadius ? radius.maxRadius : '30'}rem;
+          height: ${radius?.maxRadius ? radius.maxRadius : '30'}rem;
         }
      
         .shape__basis{
@@ -135,8 +135,8 @@ const Shape: FC<Shape> = ({
         }
         @media (max-width: 768px) {
           .shape__basis {
-            width:  ${radius?.minRadius ? radius.minRadius : 20}rem;
-            height:  ${radius?.minRadius ? radius.minRadius : 20}rem;
+            width:  ${radius?.minRadius ? radius.minRadius :  radius?.maxRadius}rem;
+            height:  ${radius?.minRadius ? radius.minRadius :  radius?.maxRadius}rem;
           }
         }
     `}</style>
