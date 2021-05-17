@@ -11,7 +11,6 @@ const OpenCloseTags = ({ text, children, id }: { text: string, children: any, id
       </section >
       <style jsx>{`
         section{
-
           min-height: 100vh;
           height: content;
           background-color: var(--background);
@@ -23,6 +22,7 @@ const OpenCloseTags = ({ text, children, id }: { text: string, children: any, id
           overflow-x: hidden;
           overflow-y: hidden;
           padding: 0 3rem;
+          transition: .6s;
         }
         h2 {
           color: var(--grey);

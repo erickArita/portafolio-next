@@ -53,6 +53,7 @@ const Header = () => {
           width: 100%;
           overflow: hidden;
           z-index: 1;
+          transition: .6s;
         }
         
         .text {
