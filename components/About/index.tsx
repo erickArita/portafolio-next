@@ -31,7 +31,7 @@ const AboutMe = () => {
         font-size: 20px;
         text-align: left;
         line-height: 1.6rem;
-        z-index: 2;
+        z-index: 1;
         width: 500px;
      
       }

@@ -12,7 +12,7 @@ const Header = () => {
     <>
       <header id='header' style={{ height: `${use100vh()}px` }}>
         <div className="circle--fly left" />
-          <Shape radius={{ maxRadius: 32, minRadius: 22 }}   >
+          <Shape radius={{ maxRadius: 32, minRadius: 22 }}  >
             <Image
               className='main__image'
               src='/me.png'
