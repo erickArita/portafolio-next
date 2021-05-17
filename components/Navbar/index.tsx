@@ -11,6 +11,8 @@ const Navbar = () => {
   }
   // close menu modify  width
   useWindowListener({ event: 'resize', handler: handleShowMenu })
+  // close scroll 
+  useWindowListener({ event: 'scroll', handler: handleShowMenu })
   return (
     <>
       <nav>
