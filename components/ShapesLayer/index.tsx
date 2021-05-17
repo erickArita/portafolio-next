@@ -20,7 +20,6 @@ const ShapesLayer = () => {
           <div key={`${i}`}
             style={{
               transform: `translate(${coords.x}px,${coords.y}px)`,
-             
               width: '50px',
               height: '50px',
               // @ts-ignore

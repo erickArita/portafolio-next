@@ -17,6 +17,7 @@ const Card = ({ cardContent, layaut }: { cardContent: CardContent, layaut: Layou
         className="card"
         style={{
           transition: '1s ease-in',
+          // validar esto
           color: cardContent.colorIcon,
           width: layaut?.width,
           height: layaut?.height

@@ -11,7 +11,9 @@ const OpenCloseTags = ({ text, children, id }: { text: string, children: any, id
       </section >
       <style jsx>{`
         section{
+
           min-height: 100vh;
+          height: content;
           background-color: var(--background);
           display: flex;
           flex-direction: column;
