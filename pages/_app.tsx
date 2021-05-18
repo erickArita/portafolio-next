@@ -12,8 +12,6 @@ export default function MyApp({ Component, pageProps }: App) {
 
     <>
 
-
-
       <Head>
         <meta name="title" content="Erick Arita Desarrollador frontend" />
         <meta
@@ -25,7 +23,7 @@ export default function MyApp({ Component, pageProps }: App) {
         <meta property="og:title" content="Erick Arita Desarrollador frontend" />
         <meta property="og:description" content="🚀 Erick Marley Arita desarrollador frontend con reactjs y nextjs dessarrollador web de honduras 🚀" />
         <meta property="og:image" content="/page.png" />
-
+    <title>Erick Arita FrontEnd</title>
       </Head>
       <Component {...pageProps} />
     </>
