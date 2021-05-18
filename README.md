@@ -22,5 +22,3 @@ npm run dev
 se abrira en  [http://localhost:3000](http://localhost:3000).
 
 En el proyecto se encuentra el directorio ``` docs ``` donde esta la documentación de la página como un html solo seleccionala y se te abrirá en el navegador
-
-

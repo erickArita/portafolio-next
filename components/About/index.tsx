@@ -33,7 +33,7 @@ const AboutMe = () => {
         line-height: 1.6rem;
         z-index: 1;
         width: 500px;
-     
+        margin: 0 3rem;
       }
       .about__me__highlight{
         color: var(--terciary);
@@ -41,6 +41,7 @@ const AboutMe = () => {
       @media (max-width:500px){
         .about__me{
           width: 300px;
+          margin: 0 0 ;
         }
 
       }
