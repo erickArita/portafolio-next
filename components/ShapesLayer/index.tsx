@@ -4,7 +4,7 @@ import { Line, SemiCircle, Spring, Triangle } from './shapes'
 import { randPosition } from '../../utils/random'
 const ShapesLayer = () => {
   const [coords, setCoords] = useState({ x: 0, y: 0 })
-  const shapes = [Line, SemiCircle, Spring, Triangle, Line, SemiCircle, Triangle];
+  const shapes = [Line, SemiCircle, Spring, Triangle, Line, SemiCircle];
 
   // const moveShapes = (e: MouseEvent) => {
   //   setCoords({ x: e.clientX / 50, y: e.clientY / 50 });
@@ -54,14 +54,12 @@ const ShapesLayer = () => {
         }
       
 
-        @media (max-width:768px){
-           
-          .shapesMask div{
-            animation: leviting 2s ease-in-out infinite;
-            animation-delay:calc(-.4s * var(--i));
-          }
-         
+          
+        .shapesMask div{
+          animation: leviting 2s ease-in-out infinite;
+          animation-delay:calc(-.4s * var(--i));
         }
+         
         @keyframes leviting{
           0%{
             transform: translateY(1rem);
