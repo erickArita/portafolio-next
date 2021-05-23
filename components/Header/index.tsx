@@ -3,7 +3,6 @@ import { use100vh } from "react-div-100vh";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { IoMdHand } from 'react-icons/io'
 import Image from 'next/image'
-import ShapesLayer from '../ShapesLayer'
 import Shape from "../Shape";
 
 const Header = () => {
@@ -44,7 +43,6 @@ const Header = () => {
             <FaGithub />
           </a>
         </div>
-        <ShapesLayer />
       </header>
       <style jsx>{`
         .main__image{
