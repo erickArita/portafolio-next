@@ -12,9 +12,10 @@ const Proyectos = () => {
   return (
     <OpenCloseTags text='Proyectos' id='proyectos'>
       <Shape
-        circlesNum={6}
-        radius={{ maxRadius: 6 }}
+        circlesNum={3}
+        radius={{ minRadius: 15 }}
         inView={inView}
+        shape='circle'
         randomPos
         reorderOnHover
       />

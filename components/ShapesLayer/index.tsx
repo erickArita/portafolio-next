@@ -1,16 +1,16 @@
 import { useState } from 'react';
 import { useWindowListener } from '../../hooks/useListeners';
 import { Line, SemiCircle, Spring, Triangle } from './shapes'
-
+import { randPosition } from '../../utils/random'
 const ShapesLayer = () => {
   const [coords, setCoords] = useState({ x: 0, y: 0 })
-  const shapes = [Line, SemiCircle, Spring, Triangle];
+  const shapes = [Line, SemiCircle, Spring, Triangle, Line, SemiCircle, Triangle];
 
-  const moveShapes = (e: MouseEvent) => {
-    setCoords({ x: e.clientX / 50, y: e.clientY / 50 });
-  }
+  // const moveShapes = (e: MouseEvent) => {
+  //   setCoords({ x: e.clientX / 50, y: e.clientY / 50 });
+  // }
 
-  useWindowListener({ event: 'mousemove', handler: moveShapes })
+  // useWindowListener({ event: 'mousemove', handler: moveShapes })
   return (
     <>
       <div
@@ -19,9 +19,11 @@ const ShapesLayer = () => {
         {shapes.map((Shape, i) =>
           <div key={`${i}`}
             style={{
-              transform: `translate(${coords.x}px,${coords.y}px)`,
+              top: `${randPosition(90)}%`,
+              left: `${randPosition(90)}%`,
               width: '50px',
               height: '50px',
+              position: 'absolute',
               // @ts-ignore
               "--i": `${i}`
             }}
@@ -44,29 +46,14 @@ const ShapesLayer = () => {
           padding: 3rem;
           box-sizing: border-box;
           animation: onLoad 6s ;
+          z-index: 0;
         }
            
         .shapesMask div{
           transition: .7s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
-         
-         .shapesMask div:first-child {
-          align-self: flex-end;
+      
 
-        }
-
-        .shapesMask div:nth-child(2) {
-          justify-self: right;
-          align-self: flex-start;
-        }
-
-        .shapesMask div:nth-child(3) {
-          align-self: flex-end;
-          justify-self: right;
-        }
-        .shapesMask div:last-child {
-          align-self: flex-end;
-        }  
         @media (max-width:768px){
            
           .shapesMask div{

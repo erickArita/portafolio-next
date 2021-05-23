@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": false,
   "scripts": {
-    "dev": "next dev -H 192.168.1.44",
+    "dev": "next dev -H 192.168.5.105",
     "build": "next build",
     "start": "next start ",
     "docs":"npx typedoc --out docs ./components ./hooks ./utils --exclude ./node_modules "

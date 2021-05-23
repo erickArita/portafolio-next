@@ -60,6 +60,7 @@ const Links = ({ showMenu, setShowMenu }: { showMenu: boolean, setShowMenu: Disp
       }
      
       .link {
+        margin-top: 1rem;
         color: #f1e5e5;
         padding: 0.6rem 0.8rem;
         box-sizing: border-box;
@@ -86,19 +87,19 @@ const Links = ({ showMenu, setShowMenu }: { showMenu: boolean, setShowMenu: Disp
         .links {
           display: flex;
           flex-direction: column;
-          height: 20rem;
+          height: 25rem;
           text-align: center;
           width: 100%;
           backdrop-filter: blur(5px);
           padding: 6rem 5rem 0 5rem;
           justify-content: center;
           box-sizing: border-box;
-          transform: translateY(-14rem);
+          transform: translateY(-16rem);
           transition: .7s ease-in-out;
         }
       }
       .links--show{
-        transform: translateY(0rem);
+        transform: translateY(3rem);
         transition: .7s ease-in-out;
       }
      

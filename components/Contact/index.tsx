@@ -1,5 +1,6 @@
 import { FormEvent, useState, } from "react"
 import Container from "../Container"
+import Shape from "../Shape"
 
 /**Contac Form makes a call to an api with the data of the form
  *  return error if request is failure
@@ -53,6 +54,7 @@ const Contact = () => {
   return (
     <>
         <Container text='Contacto' id='contacto'>
+          <Shape />
           <form className='mt' onSubmit={handleSubmit} >
             <label htmlFor="nombre">Nombre</label>
             <input autoComplete='off' type="text" required name='nombre' />
@@ -75,12 +77,12 @@ const Contact = () => {
           box-shadow: 0px 0px 20px 2px #0b0b0c;
           flex-direction: column;
           padding: 3rem;
-          background-color: #272727;
+          background-color:transparent; 
+          backdrop-filter: blur(5px);
           justify-content: space-around;
           min-height: 550px;
           box-sizing: border-box;
           position: relative;
-          
         }
    
         input{
@@ -134,7 +136,7 @@ const Contact = () => {
           left: 50%;
           margin-left: -150px;
         }
-        @media(max-width:425px){
+        @media(max-width:500px){
           form{
             width: 100%;
           }

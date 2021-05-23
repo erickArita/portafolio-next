@@ -63,21 +63,13 @@ const Navbar = () => {
           #closeMenuLayer {
             position: fixed;
             left: 0;
-            top: 220px;
-            height: 80vh;
+            
+            height: 55vh;
             width: 100%;
             z-index: 2;
+            bottom: 0;
           }
-          .links {
-            display: flex;
-            flex-direction: column;
-            height: 20rem;
-            text-align: center;
-            width: 100%;
-            padding: 6rem 5rem 0 5rem;
-            justify-content: center;
-            box-sizing: border-box;
-          }
+        
         }
     `}</style>
     </>

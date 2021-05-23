@@ -101,11 +101,7 @@ const Card = ({ cardContent, layaut }: { cardContent: CardContent, layaut: Layou
         .desactive{
           opacity: 0;
         }
-        @media(max-width:400px){
-          .card{
-            
-          }
-        }
+      
     `}</style>
     </>
   )

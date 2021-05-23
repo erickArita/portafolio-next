@@ -12,15 +12,18 @@ const Header = () => {
     <>
       <header id='header' style={{ height: `${use100vh()}px` }}>
         <div className="circle--fly left" />
+        <div className='main__image'>
+
           <Shape radius={{ maxRadius: 32, minRadius: 22 }}  >
             <Image
-              className='main__image'
               src='/me.png'
               width={700}
               height={700}
+
               alt="Foto de Erick Arita"
             />
           </Shape>
+        </div>
 
         <div className="circle--fly right" />
         <div className="text">
@@ -44,6 +47,10 @@ const Header = () => {
         <ShapesLayer />
       </header>
       <style jsx>{`
+        .main__image{
+          z-index: 1;
+          position: absolute;
+        }
         header {
           display: flex;
           justify-content: center;
