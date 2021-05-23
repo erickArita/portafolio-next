@@ -1,16 +1,8 @@
-import { useState } from 'react';
-import { useWindowListener } from '../../hooks/useListeners';
 import { Line, SemiCircle, Spring, Triangle } from './shapes'
 import { randPosition } from '../../utils/random'
 const ShapesLayer = () => {
-  const [coords, setCoords] = useState({ x: 0, y: 0 })
   const shapes = [Line, SemiCircle, Spring, Triangle, Line, SemiCircle];
 
-  // const moveShapes = (e: MouseEvent) => {
-  //   setCoords({ x: e.clientX / 50, y: e.clientY / 50 });
-  // }
-
-  // useWindowListener({ event: 'mousemove', handler: moveShapes })
   return (
     <>
       <div
