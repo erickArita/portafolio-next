@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": false,
   "scripts": {
-    "dev": "next dev -H 192.168.0.106",
+    "dev": "next dev",
     "build": "next build",
-    "start": "next start ",
-    "docs":"npx typedoc --out docs ./components ./hooks ./utils --exclude ./node_modules "
+    "start": "next start",
+    "docs": "npx typedoc --out docs ./components ./hooks ./utils --exclude ./node_modules "
   },
   "dependencies": {
     "animated-scroll-to": "^2.2.0",
@@ -15,11 +15,11 @@
     "react": "17.0.2",
     "react-div-100vh": "^0.6.0",
     "react-dom": "17.0.2",
-    "react-icons": "^4.2.0",
-    "typedoc": "^0.20.36"
+    "react-icons": "^4.2.0"
   },
   "devDependencies": {
     "@types/react": "^17.0.4",
+    "typedoc": "^0.20.36",
     "typescript": "^4.2.4"
   }
 }
