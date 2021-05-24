@@ -21,31 +21,31 @@ const Links = ({ showMenu, setShowMenu }: { showMenu: boolean, setShowMenu: Disp
           onClick={() => closeMenuToNavigate('#header')}
           className="link"
         >
-          <p>Inicio</p>
+          <p className='link__text'>Inicio</p>
         </li>
         <li
           onClick={() => closeMenuToNavigate('#sobremi')}
           className="link"
         >
-          <p>Sobre Mi</p>
+          <p className='link__text'>Sobre Mi</p>
         </li>
         <li
           onClick={() => closeMenuToNavigate('#skills')}
           className="link"
         >
-          <p>Skills</p>
+          <p className='link__text'>Skills</p>
         </li>
         <li
           onClick={() => closeMenuToNavigate('#proyectos')}
           className="link"
         >
-          <p >Proyectos</p>
+          <p className='link__text'>Proyectos</p>
         </li>
         <li
           onClick={() => closeMenuToNavigate('#contacto')}
           className="link"
         >
-          <p>Contacto</p>
+          <p className='link__text'>Contacto</p>
         </li>
       </ul>
       <style jsx>{`
@@ -73,7 +73,7 @@ const Links = ({ showMenu, setShowMenu }: { showMenu: boolean, setShowMenu: Disp
         border: 1px solid transparent;
         margin-right: .3rem;
       }
-      .link p {
+      .link__text {
         margin: 0;
       }
       .link:hover {
