@@ -1,25 +1,34 @@
 {
   "name": "portafolio-next",
   "version": "0.1.0",
-  "private": false,
+  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "docs": "npx typedoc --out docs ./components ./hooks ./utils --exclude ./node_modules "
+    "lint": "eslint"
   },
   "dependencies": {
-    "animated-scroll-to": "^2.2.0",
-    "next": "10.2.0",
-    "normalize.css": "^8.0.1",
-    "react": "17.0.2",
-    "react-div-100vh": "^0.6.0",
-    "react-dom": "17.0.2",
-    "react-icons": "^4.2.0"
+    "next": "16.2.6",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
   },
   "devDependencies": {
-    "@types/react": "^17.0.4",
-    "typedoc": "^0.20.36",
-    "typescript": "^4.2.4"
-  }
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.6",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  },
+  "ignoreScripts": [
+    "sharp",
+    "unrs-resolver"
+  ],
+  "trustedDependencies": [
+    "sharp",
+    "unrs-resolver"
+  ]
 }

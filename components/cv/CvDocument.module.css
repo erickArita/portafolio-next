@@ -1,0 +1,396 @@
+/* CvDocument.module.css
+   Classic black-and-white CV, ported 1:1 from the Claude Design handoff.
+   Scoped via CSS Modules so its class names never collide with the pixel theme.
+   CV-specific custom properties are defined on .cv so they override the
+   pixel theme's :root vars for everything inside the document. */
+
+.cv {
+  --ink: #111;
+  --ink-soft: #333;
+  --muted: #555;
+  --rule: #000;
+  --paper: #fff;
+  --max: 760px;
+
+  color: var(--ink);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 11pt;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  image-rendering: auto;
+}
+
+/* The global pixel theme sets a monospace font directly on h1/h2/h3, which would
+   otherwise win over the inherited stack above. Re-assert the formal font on
+   every CV element so headings render normally. */
+.cv,
+.cv * {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* Neutralize the remaining pixel-theme globals that leak into the document:
+   the name's pink text-shadow, the cyan/yellow heading colors, and Tailwind's
+   preflight list reset (which strips the bullet markers). */
+.cv h1,
+.cv h2,
+.cv h3 {
+  color: var(--ink);
+  text-shadow: none;
+}
+.cv ul {
+  list-style: disc;
+}
+
+/* Toolbar */
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 16px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+.toolbar .label {
+  color: #666;
+  margin-right: 4px;
+}
+.toolbar button {
+  font: inherit;
+  font-size: 12px;
+  padding: 6px 12px;
+  background: #fff;
+  border: 1px solid #999;
+  color: #111;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+}
+.toolbar button:hover {
+  background: #f3f3f3;
+}
+.toolbar button.active {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+.toolbar .divider {
+  width: 1px;
+  height: 20px;
+  background: #ccc;
+  margin: 0 6px;
+}
+
+/* Page */
+.page {
+  max-width: var(--max);
+  margin: 24px auto;
+  background: var(--paper);
+  padding: 56px 64px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Header */
+.head {
+  border-bottom: 2px solid var(--rule);
+  padding-bottom: 14px;
+  margin-bottom: 18px;
+}
+.head h1 {
+  margin: 0 0 4px 0;
+  font-size: 22pt;
+  letter-spacing: 0.01em;
+  font-weight: 700;
+}
+.head .role {
+  font-size: 12pt;
+  color: var(--ink-soft);
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+.head .contact {
+  font-size: 10pt;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+}
+.head .contact a {
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px dotted #999;
+}
+.head .contact a:hover {
+  color: var(--ink);
+}
+.head .contact .sep {
+  color: #aaa;
+}
+
+/* Sections */
+.section {
+  margin-top: 20px;
+}
+.section > h2 {
+  font-size: 11pt;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  margin: 0 0 8px 0;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--rule);
+  font-weight: 700;
+}
+.section p {
+  margin: 0 0 8px 0;
+  text-align: justify;
+  text-wrap: pretty;
+}
+
+/* Skills */
+.skillsGrid {
+  margin: 4px 0 0 0;
+}
+.skillRow {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 12px;
+  padding: 3px 0;
+  font-size: 10.5pt;
+}
+.skillRow .label {
+  font-weight: 700;
+  color: var(--ink);
+}
+.skillRow .value {
+  color: var(--ink-soft);
+}
+
+/* Job */
+.job {
+  margin-top: 12px;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+.job:first-of-type {
+  margin-top: 4px;
+}
+.jobHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 2px;
+}
+.jobHead .company {
+  font-weight: 700;
+  font-size: 11.5pt;
+}
+.jobHead .company .tag {
+  font-weight: 400;
+  color: var(--muted);
+}
+.jobHead .dates {
+  font-size: 10pt;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.jobSub {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 10.5pt;
+  color: var(--ink-soft);
+  margin-bottom: 6px;
+  font-style: italic;
+}
+.jobSummary {
+  font-size: 10.5pt;
+  color: var(--ink-soft);
+  margin-bottom: 6px;
+}
+.job ul {
+  margin: 0 0 4px 0;
+  padding-left: 18px;
+}
+.job li {
+  margin-bottom: 3px;
+  font-size: 10.5pt;
+  text-align: justify;
+  text-wrap: pretty;
+}
+.stack {
+  margin-top: 4px;
+  font-size: 10pt;
+  color: var(--muted);
+}
+.stack b {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+/* Education */
+.eduItem {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 10.5pt;
+}
+.eduItem .dates {
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+/* Languages */
+.langRow {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 12px;
+  font-size: 10.5pt;
+  padding: 2px 0;
+}
+.langRow .label {
+  font-weight: 700;
+}
+.langRow .value {
+  color: var(--ink-soft);
+}
+
+/* Hidden text for AI/LLM/ATS - invisible to humans, parseable by text extractors */
+.aiOnly {
+  color: #ffffff;
+  background: #ffffff;
+  font-size: 1px;
+  line-height: 1px;
+  letter-spacing: -1px;
+  opacity: 0.01;
+  user-select: none;
+  pointer-events: none;
+  position: absolute;
+  left: -1px;
+  top: auto;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  z-index: -1;
+}
+
+/* Print */
+@page {
+  size: Letter;
+  margin: 0.45in;
+}
+@media print {
+  .toolbar,
+  .noPrint {
+    display: none !important;
+  }
+  .page {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+  .cv {
+    font-size: 9.5pt;
+    line-height: 1.35;
+  }
+  .head {
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+  }
+  .head h1 {
+    font-size: 18pt;
+    margin-bottom: 2px;
+  }
+  .head .role {
+    font-size: 10.5pt;
+    margin-bottom: 6px;
+  }
+  .head .contact {
+    font-size: 8.5pt;
+  }
+  .section {
+    margin-top: 12px;
+  }
+  .section > h2 {
+    font-size: 9.5pt;
+    margin-bottom: 4px;
+    padding-bottom: 2px;
+  }
+  .section p {
+    margin: 0 0 6px 0;
+  }
+  .skillRow,
+  .langRow {
+    font-size: 9pt;
+    padding: 1px 0;
+    grid-template-columns: 120px 1fr;
+    gap: 8px;
+  }
+  .job {
+    margin-top: 8px;
+  }
+  .jobHead .company {
+    font-size: 10pt;
+  }
+  .jobHead .dates,
+  .jobSub {
+    font-size: 9pt;
+  }
+  .jobSub {
+    margin-bottom: 3px;
+  }
+  .job ul {
+    padding-left: 15px;
+    margin: 0 0 2px 0;
+  }
+  .job li {
+    font-size: 9pt;
+    margin-bottom: 1px;
+  }
+  .stack {
+    font-size: 8.5pt;
+    margin-top: 2px;
+  }
+  .eduItem {
+    font-size: 9pt;
+  }
+  .cv a {
+    color: var(--ink);
+  }
+  .job,
+  .section {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .aiOnly {
+    display: block !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 720px) {
+  .page {
+    padding: 28px 22px;
+    margin: 0;
+    box-shadow: none;
+  }
+  .skillRow,
+  .langRow {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+  .jobHead,
+  .jobSub,
+  .eduItem {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .jobHead .dates,
+  .eduItem .dates {
+    font-size: 10pt;
+  }
+}
