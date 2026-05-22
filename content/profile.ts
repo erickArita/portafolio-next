@@ -362,6 +362,7 @@ export const TECH_TIERS: TechTier[] = [
     titleColor: "var(--cyan)",
     tagCls: "cy",
     tags: [
+      "PYTHON",
       "REDUX TOOLKIT QUERY",
       "ANT DESIGN",
       "TAILWIND",
@@ -387,7 +388,7 @@ export const TECH_TIERS: TechTier[] = [
     descKey: "tier.b.desc",
     titleColor: "var(--yellow)",
     tagCls: "yl",
-    tags: ["NODE.JS", "EXPRESS.JS", "PYTHON", "MYSQL", "GCP", "FIREBASE", "PDF RENDERER", "CHARTS"],
+    tags: ["NODE.JS", "EXPRESS.JS", "MYSQL", "GCP", "FIREBASE", "PDF RENDERER", "CHARTS"],
   },
 ];
 

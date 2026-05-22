@@ -17,9 +17,12 @@ profile README. The portfolio and the README read from the **same data source**
 - 📊 **Live GitHub data** — commits, PRs, repos, stars, streak, top languages and a
   52-week contribution heatmap, fetched via the GitHub GraphQL API (cached 1h).
 - 🖼️ **SVG endpoints** for your GitHub profile README:
+  - `/api/og/card.svg` — hero / profile card with pixel coder avatar (720×210)
   - `/api/og/stats.svg` — compact one-row banner (720×80)
   - `/api/og/metrics.svg` — 2×3 metric cards (720×220)
   - `/api/og/languages.svg` — top-language pixel bars (560×260)
+  - `/api/og/power-ups.svg` — specializations grid (720×380) · `?lang=es|en`
+  - `/api/og/quest-log.svg` — work-experience log (720×380) · `?lang=es|en`
 
 ## Getting started
 
@@ -44,8 +47,9 @@ On Vercel: **Project → Settings → Environment Variables**.
 ## Embedding in your GitHub profile
 
 Put the contents of [`github-profile/README.md`](./github-profile/README.md) in your
-`erickArita/erickArita` repo and replace `YOUR-DOMAIN.vercel.app` with your deployed
-domain. GitHub's image proxy caches the SVGs ~5 min; the data itself refreshes ~hourly.
+`erickArita/erickArita` repo. It already points at `erick-arita.vercel.app` (change the
+domain there if you deploy elsewhere). GitHub's image proxy caches the SVGs ~5 min; the
+data itself refreshes ~hourly.
 
 ## Project structure
 
@@ -54,12 +58,18 @@ app/
   page.tsx                  # server component → fetches stats → <PixelProfile/>
   layout.tsx                # fonts (Press Start 2P + VT323), metadata
   globals.css               # pixel-art design system
-  api/og/
-    stats.svg/route.ts
-    metrics.svg/route.ts
-    languages.svg/route.ts
+  cv/page.tsx               # shareable /cv route
+  api/og/                   # live SVG endpoints embedded in the GitHub profile
+    card.svg/route.ts       # hero / profile card (static)
+    stats.svg/route.ts      # live GitHub stats
+    metrics.svg/route.ts    # live GitHub metrics
+    languages.svg/route.ts  # live top languages
+    power-ups.svg/route.ts  # specializations (static, ?lang)
+    quest-log.svg/route.ts  # work experience (static, ?lang)
 components/pixel/            # PixelProfile + interactive client components, i18n
+content/profile.ts          # single source of truth for all copy + structural data
 lib/
   github.ts                 # GraphQL fetcher + fallback (single source of truth)
-  pixel-svg.ts              # tiny SVG drawing primitives
+  pixel-svg.ts              # tiny SVG primitives + shared palette
+github-profile/README.md    # ready-to-paste profile README (erickArita/erickArita)
 ```

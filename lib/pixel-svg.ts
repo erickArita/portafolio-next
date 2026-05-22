@@ -1,6 +1,52 @@
 // lib/pixel-svg.ts
 // Tiny pixel-art SVG drawing primitives — used by all /api/og/* routes.
 
+/** Shared pixel-art palette (literal hex — CSS vars don't resolve inside a standalone SVG). */
+export const PIX = {
+  cyan: '#4ff0d6',
+  pink: '#ff5fa2',
+  yellow: '#ffd23f',
+  green: '#7aff66',
+  orange: '#ff8a3d',
+  purple: '#9b6dff',
+  ink: '#ece6ff',
+  muted: '#8a7eb8',
+  line: '#4a2d8a',
+  bg: '#15092b',
+  dark: '#0c0420',
+} as const;
+
+const VAR_MAP: Record<string, string> = {
+  'var(--cyan)': PIX.cyan,
+  'var(--pink)': PIX.pink,
+  'var(--yellow)': PIX.yellow,
+  'var(--green)': PIX.green,
+  'var(--orange)': PIX.orange,
+  'var(--ink)': PIX.ink,
+  'var(--muted)': PIX.muted,
+  'var(--line)': PIX.line,
+};
+
+/** Maps a `var(--name)` token to its hex; passes literal colors (e.g. `#9b6dff`) through. */
+export const resolveColor = (v: string): string => VAR_MAP[v] ?? v;
+
+/** Tag short-class (cy/pk/yl/gn/or) → hex. */
+export const tagColor = (cls: string): string =>
+  ({ cy: PIX.cyan, pk: PIX.pink, yl: PIX.yellow, gn: PIX.green, or: PIX.orange }[cls] ?? PIX.line);
+
+/**
+ * Dictionary strings carry inline HTML (for the React side). For SVG text we want
+ * plain text: strip tags and decode the entities we use. `text()` re-escapes after.
+ */
+export const plainText = (s: string): string =>
+  s
+    .replace(/<[^>]*>/g, '')
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&#39;/g, "'")
+    .replace(/&quot;/g, '"');
+
 export class PixelSVG {
   parts: string[] = [];
   W: number;
