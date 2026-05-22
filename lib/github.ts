@@ -85,8 +85,8 @@ export async function getStats(username: string): Promise<Stats> {
       'User-Agent': 'pixel-portfolio',
     },
     body: JSON.stringify({ query: QUERY, variables: { login: username } }),
-    // Next.js Data Cache: revalidate every hour
-    next: { revalidate: 3600 },
+    // Next.js Data Cache: re-query GitHub every 10 min so the profile stays fresh.
+    next: { revalidate: 600 },
   });
 
   if (!r.ok) throw new Error(`GitHub API ${r.status}`);
