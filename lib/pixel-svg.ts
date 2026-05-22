@@ -109,8 +109,8 @@ export const svgResponse = (svg: string) =>
   new Response(svg, {
     headers: {
       'Content-Type': 'image/svg+xml; charset=utf-8',
-      // Short TTL so GitHub's camo image proxy re-fetches the README cards often
-      // (browser/camo 5 min, CDN 5 min, serve-stale up to 1h while revalidating).
-      'Cache-Control': 'public, max-age=300, s-maxage=300, stale-while-revalidate=3600',
+      // Daily TTL: GitHub's camo proxy / CDN re-fetch the README cards once a day
+      // (cache 1 day, serve-stale up to 2 days while revalidating in the background).
+      'Cache-Control': 'public, max-age=86400, s-maxage=86400, stale-while-revalidate=172800',
     },
   });
