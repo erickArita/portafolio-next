@@ -163,6 +163,10 @@ export const EXPERIENCE: Job[] = [
       es: "Fullstack Developer (May 2024 a Nov 2024) · Frontend Developer (May 2021 a May 2024)",
       en: "Fullstack Developer (May 2024 to Nov 2024) · Frontend Developer (May 2021 to May 2024)",
     },
+    summary: {
+      es: "Aplicaciones <b>SaaS multitenant</b> de CRM, contabilidad y gestión aduanera desarrolladas end-to-end con React, ASP.NET Core y SQL Server.",
+      en: "Multi-tenant <b>SaaS</b> applications for CRM, accounting and customs management built end-to-end with React, ASP.NET Core and SQL Server.",
+    },
     bullets: {
       es: [
         "Comencé como frontend y evolucioné a backend/full-stack desarrollando con <b>C#, ASP.NET Core/.NET 6+, REST APIs, Entity Framework Core</b> y SQL Server.",

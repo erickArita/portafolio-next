@@ -20,14 +20,6 @@
   image-rendering: auto;
 }
 
-/* The global pixel theme sets a monospace font directly on h1/h2/h3, which would
-   otherwise win over the inherited stack above. Re-assert the formal font on
-   every CV element so headings render normally. */
-.cv,
-.cv * {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
 /* Neutralize the remaining pixel-theme globals that leak into the document:
    the name's pink text-shadow, the cyan/yellow heading colors, and Tailwind's
    preflight list reset (which strips the bullet markers). */
