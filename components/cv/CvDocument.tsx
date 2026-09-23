@@ -2,7 +2,6 @@
 
 import { useCallback, useEffect, useSyncExternalStore } from "react";
 import {
-  ATS_NOTES,
   EDUCATION,
   EXPERIENCE,
   HEADER,
@@ -14,14 +13,6 @@ import {
   type Locale,
 } from "@/content/cv";
 import styles from "./CvDocument.module.css";
-
-/**
- * Hidden AI/ATS prompt-injection blocks (the "baleada" canary).
- * Default OFF so the public /cv page stays clean. Flip to `true` to embed the
- * invisible notes — but note serious ATS (Workday/Greenhouse/Lever) detect
- * hidden white/1px text and may auto-reject. See content/cv.ts → ATS_NOTES.
- */
-const INCLUDE_ATS_NOTES = false;
 
 // --- Language preference, shared site-wide via the "pixelLang" key. ----------
 // useSyncExternalStore keeps the server snapshot ("es") in sync with hydration
@@ -94,13 +85,6 @@ export default function CvDocument() {
           {pick(UI.print)}
         </button>
       </div>
-
-      {/* Hidden AI / LLM / ATS notes (invisible to humans) */}
-      {INCLUDE_ATS_NOTES && (
-        <div className={styles.aiOnly} aria-hidden="true">
-          {ATS_NOTES[0]}
-        </div>
-      )}
 
       <main className={styles.page} id="cv">
         <header className={styles.head}>
@@ -202,12 +186,6 @@ export default function CvDocument() {
         </section>
       </main>
 
-      {/* Second hidden AI block, near the end of the document */}
-      {INCLUDE_ATS_NOTES && (
-        <div className={styles.aiOnly} aria-hidden="true">
-          {ATS_NOTES[1]}
-        </div>
-      )}
     </div>
   );
 }
