@@ -269,13 +269,6 @@ export const dict: Record<Locale, Record<string, string>> = {
 export const PROFILE = {
   name: "ERICK ARITA",
   level: "LVL 5+",
-  cvPath: "/Cv.pdf",
-  /** Language-specific CV PDFs (generated from the /cv design). */
-  cvPathByLang: { es: "/Cv-es.pdf", en: "/Cv-en.pdf" } as Record<Locale, string>,
-  cvFileNameByLang: {
-    es: "Erick-Arita-CV-ES.pdf",
-    en: "Erick-Arita-CV-EN.pdf",
-  } as Record<Locale, string>,
 };
 
 export const NAV: [id: string, key: string][] = [

@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { PROFILE } from "@/content/profile";
 import { I18nProvider, T, useI18n } from "./i18n";
 
 export default function CvSoon() {
@@ -50,7 +49,12 @@ function Inner() {
           className="cv-actions"
           style={{ marginTop: 28, justifyContent: "center" }}
         >
-          <a className="cv-btn" href={PROFILE.cvPath} download>
+          <a
+            className="cv-btn"
+            href={`/cv?lang=${lang}&print=1`}
+            target="_blank"
+            rel="noopener"
+          >
             {t("cv.soon.download")}
           </a>
           <Link className="cv-btn alt" href="/">

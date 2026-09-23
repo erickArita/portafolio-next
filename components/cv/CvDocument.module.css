@@ -25,6 +25,21 @@
    preflight list reset (which strips the bullet markers). */
 .cv h1,
 .cv h2,
+.cv h3,
+.cv p,
+.cv a,
+.cv button,
+.cv span,
+.cv div,
+.cv section,
+.cv main,
+.cv header,
+.cv ul,
+.cv li {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.cv h1,
+.cv h2,
 .cv h3 {
   color: var(--ink);
   text-shadow: none;

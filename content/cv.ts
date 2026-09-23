@@ -119,13 +119,17 @@ export const EXPERIENCE: Job[] = [
       es: [
         "Construyo end-to-end una plataforma SaaS de ecommerce, CRM e IA con catálogo, inventario y pedidos.",
         "Integré <b>WhatsApp Cloud API</b> para conversaciones comerciales, recomendaciones y recuperación de carritos.",
+        "Desarrollé un motor de automatizaciones con <b>Temporal</b> para coordinar agentes de IA, conversaciones y flujos comerciales confiables.",
+        "Implementé estrategias de <b>caché</b> para reducir llamadas innecesarias a servicios de IA y optimizar costos operativos.",
       ],
       en: [
         "Build end-to-end a SaaS platform for ecommerce, CRM and AI with catalog, inventory and order management.",
         "Integrated <b>WhatsApp Cloud API</b> for sales conversations, product recommendations and abandoned-cart recovery.",
+        "Developed an automation engine with <b>Temporal</b> to orchestrate AI agents, conversations and reliable commerce workflows.",
+        "Implemented <b>caching</b> strategies to reduce unnecessary calls to AI services and optimize operating costs.",
       ],
     },
-    stack: "Next.js, React, Python, WhatsApp Cloud API, AI agents, SaaS",
+    stack: "Next.js, React, Python, WhatsApp Cloud API, Temporal, AI agents, caching, SaaS",
   },
   {
     company: "Nexl",

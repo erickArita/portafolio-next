@@ -49,6 +49,17 @@ function Html({ as: Tag = "span", html, className }: { as?: React.ElementType; h
 export default function CvDocument() {
   const lang = useSyncExternalStore(subscribeLang, readLang, () => "es" as Locale);
 
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const requestedLang = params.get("lang");
+    if (requestedLang === "es" || requestedLang === "en") writeLang(requestedLang);
+
+    if (params.get("print") === "1") {
+      const timer = window.setTimeout(() => window.print(), 700);
+      return () => window.clearTimeout(timer);
+    }
+  }, []);
+
   // Reflect the active language on <html>. The pixel theme is escaped purely via
   // CSS (body:has(.cv-root) in globals.css) so there is no first-paint flash.
   useEffect(() => {

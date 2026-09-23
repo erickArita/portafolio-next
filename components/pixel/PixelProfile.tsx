@@ -160,8 +160,9 @@ function Content({ stats }: { stats: Stats }) {
               <div className="cv-actions">
                 <a
                   className="cv-btn"
-                  href={PROFILE.cvPathByLang[lang]}
-                  download={PROFILE.cvFileNameByLang[lang]}
+                  href={`/cv?lang=${lang}&print=1`}
+                  target="_blank"
+                  rel="noopener"
                 >
                   {t("cv.download")}
                 </a>
