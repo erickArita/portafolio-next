@@ -13,6 +13,8 @@ export default function CvSoon() {
 
 function Inner() {
   const { t, lang, switchLang } = useI18n();
+  const cvFile = lang === "es" ? "/Cv-es.pdf" : "/Cv-en.pdf";
+  const cvFileName = lang === "es" ? "Erick-Arita-CV-ES.pdf" : "Erick-Arita-CV-EN.pdf";
   return (
     <div className="wrap" style={{ display: "grid", placeItems: "center", minHeight: "80vh" }}>
       <div
@@ -51,9 +53,8 @@ function Inner() {
         >
           <a
             className="cv-btn"
-            href={`/cv?lang=${lang}&print=1`}
-            target="_blank"
-            rel="noopener"
+            href={cvFile}
+            download={cvFileName}
           >
             {t("cv.soon.download")}
           </a>

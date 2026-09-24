@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useSyncExternalStore } from "react";
+import Link from "next/link";
 import {
   EDUCATION,
   EXPERIENCE,
@@ -74,6 +75,10 @@ export default function CvDocument() {
     <div className={`cv-root ${styles.cv}`}>
       {/* Toolbar (hidden in print) */}
       <div className={styles.toolbar} role="toolbar" aria-label="CV controls">
+        <Link className={styles.homeLink} href="/">
+          {pick(UI.backHome)}
+        </Link>
+        <span className={styles.divider} aria-hidden="true" />
         <span className={styles.label}>{pick(UI.toolbarLabel)}</span>
         <button
           type="button"

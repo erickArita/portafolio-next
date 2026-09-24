@@ -38,6 +38,8 @@ function fmt(n: number): string {
 
 function Content({ stats }: { stats: Stats }) {
   const { t, lang, switchLang } = useI18n();
+  const cvFile = lang === "es" ? "/Cv-es.pdf" : "/Cv-en.pdf";
+  const cvFileName = lang === "es" ? "Erick-Arita-CV-ES.pdf" : "Erick-Arita-CV-EN.pdf";
   const [score, setScore] = useState(0);
   const [activeId, setActiveId] = useState("stats");
 
@@ -160,9 +162,8 @@ function Content({ stats }: { stats: Stats }) {
               <div className="cv-actions">
                 <a
                   className="cv-btn"
-                  href={`/cv?lang=${lang}&print=1`}
-                  target="_blank"
-                  rel="noopener"
+                  href={cvFile}
+                  download={cvFileName}
                 >
                   {t("cv.download")}
                 </a>

@@ -10,6 +10,7 @@ export type Locale = "es" | "en";
 export type Bi = { es: string; en: string };
 
 export const UI: Record<string, Bi> = {
+  backHome: { es: "Volver al inicio", en: "Back to home" },
   toolbarLabel: { es: "Idioma / Language:", en: "Idioma / Language:" },
   print: { es: "Imprimir / PDF", en: "Print / PDF" },
   secSummary: { es: "Resumen Profesional", en: "Professional Summary" },

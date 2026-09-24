@@ -66,6 +66,15 @@
   color: #666;
   margin-right: 4px;
 }
+.toolbar .homeLink {
+  color: #111;
+  text-decoration: none;
+  border-bottom: 1px dotted #999;
+  padding: 6px 0;
+}
+.toolbar .homeLink:hover {
+  color: #666;
+}
 .toolbar button {
   font: inherit;
   font-size: 12px;
